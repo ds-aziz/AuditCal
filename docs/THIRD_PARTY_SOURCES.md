@@ -19,3 +19,7 @@ AuditCal contains original source-based analysis and tests about independent ext
 5. Scientific conclusions and accuracy metrics cannot be inferred merely from license availability or from passing source-reproduction tests.
 
 This document is a source-attribution inventory and **not a legal opinion**.
+
+## Bundled upstream license/notice texts
+
+The repository preserves the upstream [Apache License 2.0 text](../third_party/agentic-forking-path/LICENSE) and [Amazon Science NOTICE](../third_party/agentic-forking-path/NOTICE) for the original released Agentic Forking Path research material quoted in small evidence snapshots. **These are third-party documents; their presence does not license AuditCal's original code, and external datasets may carry separate terms.**
