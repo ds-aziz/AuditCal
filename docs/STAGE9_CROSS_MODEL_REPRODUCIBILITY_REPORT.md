@@ -2,7 +2,7 @@
 
 # Stage 9 — Cross-model reproducibility pilot on authentic AI-agent reports
 
-**Project:** AuditCal (AuditCal scholarship research prototype)
+**Project:** AuditCal statistical claim verification research prototype
 **Date:** 2026-10-28
 **Outcome:** six real published reports verified; six selected numerical claims independently calculated, with **five matching the stated decimal-place rounding and one requiring a minor precision review**.
 
