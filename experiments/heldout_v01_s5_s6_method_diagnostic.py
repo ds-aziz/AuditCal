@@ -16,7 +16,7 @@ import pandas as pd
 import patsy
 
 METR_SHA = "1493fc46dc379b15d2c39273fa7a7ee98767ff0d90dea113f300d7338f165746"
-PREVIOUS_INDEPENDENT_RUN = "https://github.com/ds-aziz/CSC2027-AuditCal/actions/runs/40856299523"
+PREVIOUS_INDEPENDENT_RUN = "historical_private_gitHub_actions_run_40856299523"
 FROZEN_ROUNDING_MARGIN = Decimal("0.00000001")
 
 # Already-documented numbers, NOT newly re-fitted here. Kept at full precision

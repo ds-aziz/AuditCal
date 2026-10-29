@@ -1,5 +1,8 @@
 # Held-out v0.1 — Preliminary Source Integrity and Count Readout
 
+**Provenance note:** Historical CI run IDs below refer to a previous **private** research archive; external readers cannot open those archived job logs. The selected source-data snapshots, scripts, frozen protocol and independent-review status in *this* repository are what can be inspected directly. Previously reported run success is historical and is not a fresh rerun of every experiment.
+
+
 **As of 2026-10-29 (Asia/Karachi). Evaluation in progress, not a validated accuracy benchmark.**
 
 ## Pre-frozen evaluation inputs
@@ -15,8 +18,8 @@ Two datasets (METR, Soccer), two agent variants (Claude Sonnet 4.5, Qwen3 235B),
 
 Original upstream commit: d489f03b143fcaa9befb8cc443594ff63ec61eaa. Eight original report files and eight AI-authored analysis scripts (16 source files) all matched the published Git LFS SHA256 object digests, downloaded by GitHub Actions.
 
-- [Successful source verification run](https://github.com/ds-aziz/CSC2027-AuditCal/actions/runs/40854026108).
-- [Successful full first-sentences inspection run](https://github.com/ds-aziz/CSC2027-AuditCal/actions/runs/40854338435).
+- Successful source verification run (historical private CI run 40854026108; access restricted).
+- Successful full first-sentences inspection run (historical private CI run 40854338435; access restricted).
 - **AI-generated source code was read as static text, NEVER executed.**
 
 ## Direct-source counts: 6/6 numerical agreements
@@ -24,7 +27,7 @@ Original upstream commit: d489f03b143fcaa9befb8cc443594ff63ec61eaa. Eight origin
 Independently verified official METR dataset SHA256: 1493fc46dc379b15d2c39273fa7a7ee98767ff0d90dea113f300d7338f165746.
 Independently verified university teaching copy of Soccer SHA256: 6dbc24e6f62862b0fc083ef5dc70487cf51739032bd0a04b4fed8aab3a81889a.
 
-[Successful independent raw-source checks](https://github.com/ds-aziz/CSC2027-AuditCal/actions/runs/40854734317).
+Successful independent raw-source checks (historical private CI run 40854734317; access restricted).
 
 | Frozen claim | Agent reported | Independent calculation |
 |---|---:|---:|
@@ -39,8 +42,8 @@ Soccer source league values: England, France, Germany, Spain. These six statemen
 
 ## Independently reconstructed filtered source counts: 4/4 numerical agreements
 
-[S3/S7/S8 untrusted model scripts safely inspected as static text](https://github.com/ds-aziz/CSC2027-AuditCal/actions/runs/40854889367).
-[Successful independent reimplementation of the sample filters](https://github.com/ds-aziz/CSC2027-AuditCal/actions/runs/40855127317).
+S3/S7/S8 untrusted model scripts safely inspected as static text (historical private CI run 40854889367; access restricted).
+Successful independent reimplementation of the sample filters (historical private CI run 40855127317; access restricted).
 
 | Frozen claim | Agent reported | Independent calculation |
 |---|---:|---:|
@@ -66,7 +69,7 @@ Soccer source league values: England, France, Germany, Spain. These six statemen
 
 **Next scientific steps:** independent review of the six ambiguous claims, then apply the prespecified AuditCal and naive baseline. The frozen original claim list must remain immutable.
 
-**CSC 2027 goal unchanged.** AuditCal is a defensible early Trustworthy AI research portfolio prototype, not yet a published or novel validated method. Professor emails remain ON HOLD.
+**Scientific status:** AuditCal remains a preliminary prototype, not a peer-reviewed, independently validated or established novel statistical auditing method.
 
 
 ---
@@ -75,9 +78,9 @@ Soccer source league values: England, France, Germany, Spain. These six statemen
 
 **Status: independently recomputed, NOT double-reviewed or adjudicated.** Original AI-authored programs were NEVER run. All source scripts were SHA-verified and inspected only as static text. Reproductions use independent Python implementations on pinned public data.
 
-- [Successful frozen METR model reanalysis](https://github.com/ds-aziz/CSC2027-AuditCal/actions/runs/40856299523) (developer FE / cluster-t, REML mixed models).
-- [Successful frozen Soccer model reanalysis](https://github.com/ds-aziz/CSC2027-AuditCal/actions/runs/40856323761) (S3 clustered LPM, S4 logistic g-computation, S7 identity-binomial GLM, S8 binomial-trials logit and risk contrasts).
-- [Original additional five AI scripts inspected as STATIC TEXT](https://github.com/ds-aziz/CSC2027-AuditCal/actions/runs/40855713102).
+- Successful frozen METR model reanalysis (historical private CI run 40856299523; access restricted) (developer FE / cluster-t, REML mixed models).
+- Successful frozen Soccer model reanalysis (historical private CI run 40856323761; access restricted) (S3 clustered LPM, S4 logistic g-computation, S7 identity-binomial GLM, S8 binomial-trials logit and risk contrasts).
+- Original additional five AI scripts inspected as STATIC TEXT (historical private CI run 40855713102; access restricted).
 - Both independent computation scripts and GitHub Actions workflows are on the project branch; existing source/test actions passed.
 
 ### Frozen claim comparison (reported versus independent)
@@ -126,7 +129,7 @@ S8 report risk difference +0.0811 pp matches an independently calculated **discr
 
 **Reason:** S8-C2 / S8-C3 are among the six pre-existing unadjudicated claims. This was a *targeted methodological follow-up*, not a new Stage, not a rerun of all 24 claims and not a held-out performance study. Original report and AI-authored code were inspected as hash-locked **static text only** and were **not executed**.
 
-**Code/evidence:** [Independent S8-only diagnostic](../experiments/heldout_v01_s8_method_diagnostic.py), [successfully executed GitHub Actions evidence](https://github.com/ds-aziz/CSC2027-AuditCal/actions/runs/40864956460), with source educational CSV SHA-256 \`6dbc24e6f62862b0fc083ef5dc70487cf51739032bd0a04b4fed8aab3a81889a\`, N = 99,645, statsmodels 0.15.0, binomial-trials logit and covariance clustered by \`playerShort\`. The independent model converged without recorded fit warnings. Native statsmodels \`get_margeff\` checks agree with separately implemented analytic gradient/delta-method calculations to numerical precision.
+**Code/evidence:** [Independent S8-only diagnostic](../experiments/heldout_v01_s8_method_diagnostic.py), successfully executed GitHub Actions evidence (historical private CI run 40864956460; access restricted), with source educational CSV SHA-256 \`6dbc24e6f62862b0fc083ef5dc70487cf51739032bd0a04b4fed8aab3a81889a\`, N = 99,645, statsmodels 0.15.0, binomial-trials logit and covariance clustered by \`playerShort\`. The independent model converged without recorded fit warnings. Native statsmodels \`get_margeff\` checks agree with separately implemented analytic gradient/delta-method calculations to numerical precision.
 
 | S8 statistic (units **percentage points** unless noted) | Published report | Matched binary 0→1 **discrete** contrast | Matched **derivative** marginal effect |
 |---|---:|---:|---:|
@@ -145,9 +148,9 @@ S8 report risk difference +0.0811 pp matches an independently calculated **discr
 
 ## Focused S5 formula semantics + S6 precision boundary (2026-10-29)
 
-**Scope and independence:** This is a narrow mechanistic follow-up on already frozen unresolved cases **S5-C1/C2/C3 and S6-C2**. It does **not** change source report selection, add claims, re-run prior model fits, or constitute independent human adjudication. The independent 2026-10-29 source-data numerical model fit from [METR inference run 40856299523](https://github.com/ds-aziz/CSC2027-AuditCal/actions/runs/40856299523) supplies the *existing* full-precision numerical reference values.
+**Scope and independence:** This is a narrow mechanistic follow-up on already frozen unresolved cases **S5-C1/C2/C3 and S6-C2**. It does **not** change source report selection, add claims, re-run prior model fits, or constitute independent human adjudication. The independent 2026-10-29 source-data numerical model fit from METR inference run 40856299523 (historical private CI run 40856299523; access restricted) supplies the *existing* full-precision numerical reference values.
 
-**New tested diagnostic:** [Independent S5/S6 formula-and-rounding script](../experiments/heldout_v01_s5_s6_method_diagnostic.py), [successful GitHub run 40865720769](https://github.com/ds-aziz/CSC2027-AuditCal/actions/runs/40865720769). Official METR source SHA256 is still \`1493fc46dc379b15d2c39273fa7a7ee98767ff0d90dea113f300d7338f165746\`; **246 rows, 16 developer IDs**. The original AI-authored source was read as static text, never executed. This new diagnostic **only builds Patsy design matrices** and checks decimal boundaries; no regression model was re-fitted in the diagnostic.
+**New tested diagnostic:** [Independent S5/S6 formula-and-rounding script](../experiments/heldout_v01_s5_s6_method_diagnostic.py), successful GitHub run 40865720769 (historical private CI run 40865720769; access restricted). Official METR source SHA256 is still \`1493fc46dc379b15d2c39273fa7a7ee98767ff0d90dea113f300d7338f165746\`; **246 rows, 16 developer IDs**. The original AI-authored source was read as static text, never executed. This new diagnostic **only builds Patsy design matrices** and checks decimal boundaries; no regression model was re-fitted in the diagnostic.
 
 ### S5: concrete Python source-formula proof
 

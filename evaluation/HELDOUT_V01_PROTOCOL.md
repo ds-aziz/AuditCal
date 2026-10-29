@@ -1,7 +1,7 @@
 # AuditCal — Small Held-Out Report Pilot, v0.1 Evaluation Protocol
-**Project:** CSC 2027 / Trustworthy AI for Scientific Research
+**Project:** AuditCal / Trustworthy AI for Scientific Research
 **Protocol freeze date:** 2026-10-29 (Asia/Karachi)
-**Status:** PROTOCOL + source-folder manifest frozen; **NOT EXECUTED**. No study accuracy figures, independent human gold labels, or claim outcomes exist yet.
+**Status at protocol freezing:** This protocol and report-selection manifest were frozen before case recomputation. **Updated research status:** 24 original claims have now received exploratory source-data investigation (18 preliminary numerical agreements, 6 unresolved); independent human gold labels and scientifically valid AuditCal accuracy metrics are still absent. Read the [preliminary readout](HELDOUT_V01_PRELIMINARY_READOUT.md) for the subsequently recorded results. Original case-selection and comparison rules below are preserved.
 **Frozen selection manifest:** [heldout_v01_manifest.json](heldout_v01_manifest.json)
 **Prior work:** Stage 7–11 METR/Soccer exploratory audits were used for method design. Their previously inspected claims are **not** evaluation examples here.
 **Research identity:** Check whether same-source and same-method numerical errors can be identified *without falsely declaring valid alternative statistical specifications erroneous*. Avoid broad claim of general AI reliability.
@@ -110,7 +110,7 @@ Report numerators, denominators, source categories, and Wilson 95% intervals onl
 5. Summarize confusion table and conservative descriptive metrics, uncertainty and failures. No report replacement or post hoc tolerance changes.
 6. If the checker requires changes *after inspecting these selected report results*, version code and **treat performance as exploratory development data**, then construct a new distinct held-out sample for a fair evaluation; do not claim the updated checker was tested on unseen examples here.
 
-**Stop at eight source-selected reports / no more than three selected claims per report.** No infinite additional experiments to improve a metric; first discuss whether the findings materially help CSC 2027 portfolio/research proposal and whether additional research is warranted.
+**Stop at eight source-selected reports / no more than three selected claims per report.** No infinite additional experiments to improve a metric; first discuss whether the findings materially strengthen the scientific research question and whether additional research is warranted.
 
 ## 9. Status table and next dependency
 
@@ -159,4 +159,4 @@ It reports the 3×3 gold-versus-output matrix, gold-checkable error precision/re
 3. Model IDs in AuditCal's current core are still manually supplied strings; automatic semantic equivalence is not established.
 4. Because these particular software implementations were built after observing the 24-case preliminary outcomes, even a later paired analysis on the same data should be described transparently as **retrospective/exploratory**. A subsequent *untouched* report/dataset test would be needed to support a fully prospective claim about these implementations. Do not rebrand this pilot as newly held out by dataset or as external performance validation.
 
-**Original professor-outreach HOLD and CSC 2027 objective unchanged.**
+**Evaluation integrity:** No independent expert adjudication, valid system-level accuracy or demonstrated baseline superiority is claimed.

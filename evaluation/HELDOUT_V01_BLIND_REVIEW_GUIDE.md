@@ -9,7 +9,7 @@ Please do **not** open the researcher's numerical comparison/readout or previous
 
 **Do not execute original AI-authored scripts or assume their model choices are correct.** Re-implement calculations from the reported method and verify what the script actually specifies.
 
-Upstream original report/script repository: amazon-science/agentic-forking-path, pinned Git commit d489f03b143fcaa9befb8cc443594ff63ec61eaa. Exact report paths and locked SHA256 files are recorded in heldout_v01_manifest.json and heldout_v01_lfs_sha_lock.json. All 16 original report/script files were downloaded and hash-verified in [this successful source run](https://github.com/ds-aziz/CSC2027-AuditCal/actions/runs/40854338435).
+Upstream original report/script repository: amazon-science/agentic-forking-path, pinned Git commit d489f03b143fcaa9befb8cc443594ff63ec61eaa. Exact report paths and locked SHA256 files are recorded in heldout_v01_manifest.json and heldout_v01_lfs_sha_lock.json. All 16 original report/script files were downloaded and hash-verified in this successful source run (historical private CI run 40854338435; access restricted).
 
 Official METR data repository: METR/Measuring-Early-2025-AI-on-Exp-OSS-Devs, commit 7ff2d7670235f531dff77eff58355bd77392f396, data_complete.csv, SHA256 1493fc46dc379b15d2c39273fa7a7ee98767ff0d90dea113f300d7338f165746.
 
@@ -46,4 +46,4 @@ This targeted six-claim methodological review resolves urgent ambiguity; a genui
 
 No reviewer has been recruited/approved, no review submitted and no independently adjudicated ground truth yet. Do not run/report final AuditCal accuracy, precision, recall, false positive rate or baseline superiority in the absence of honest labels and denominators.
 
-**Scholarship framing:** Pilot research uncovered the difference between source-data numerical reproduction and valid statistical-method interpretation. The CSC 2027 Master's goal, broader Trustworthy AI topic and professor email HOLD remain unchanged.
+**Research scope:** The initial investigation concerns the boundary between source-data numerical reproduction and credible statistical-method interpretation. This packet intentionally withholds the researcher's conclusions until independent assessment is recorded.

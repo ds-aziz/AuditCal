@@ -1,7 +1,7 @@
 # Stage 10 — First source-backed data-reporting discrepancies in a genuine AI-agent report
 
 **Date:** 2026-10-28
-**Project:** AuditCal (CSC 2027 Master's scholarship research prototype)
+**Project:** AuditCal (source-backed statistical claim-auditing prototype)
 **Stage:** Source-fidelity pilot on a **second, independent real dataset** (soccer player–referee red cards). This is not a validation of causal discrimination effects and not a systematic accuracy benchmark.
 
 ## Original sources
@@ -41,7 +41,7 @@ This is evidence of **two inaccurate distinct-count statements in one released A
 
 The core checker now supports a `distinct_count` claim, requiring a nonnegative whole number and exact equality with **the same documented sample/filter and identifier**. It abstains rather than comparing distinct counts from unrelated samples.
 
-`experiments/stage10_audit_verified_count_claims.py` accepts three human-transcribed real report counts and independently calculated counts, with documented source hashes and sample identity. In the [source count verification workflow](https://github.com/ds-aziz/CSC2027-AuditCal/actions/runs/40751456243), original CSV copy and official AI report were independently read and their counts calculated. In the [real-claim AuditCal workflow](https://github.com/ds-aziz/CSC2027-AuditCal/actions/runs/40751786759), exactly **two were flagged and one supported**.
+`experiments/stage10_audit_verified_count_claims.py` accepts three human-transcribed real report counts and independently calculated counts, with documented source hashes and sample identity. In the source count verification workflow (historical private CI run 40751456243; access restricted), original CSV copy and official AI report were independently read and their counts calculated. In the real-claim AuditCal workflow (historical private CI run 40751786759; access restricted), exactly **two were flagged and one supported**.
 
 Machine-readable files:
 - `results/stage10_source_count_verified.json`
@@ -49,7 +49,7 @@ Machine-readable files:
 - `experiments/stage10_soccer_source_count_audit.py`
 - `experiments/stage10_audit_verified_count_claims.py`
 
-**Software tests:** [GitHub test run](https://github.com/ds-aziz/CSC2027-AuditCal/actions/runs/40751832390) passed **50 automated tests**, including five new checks for genuine count mismatch and safe abstention.
+**Software tests:** The current [AuditCal main-branch CI](https://github.com/ds-aziz/AuditCal/actions/workflows/tests.yml) runs software tests; passing unit tests must not be interpreted as real-world verification accuracy.
 
 ## Limits and interpretation
 
@@ -79,6 +79,6 @@ Machine-readable files:
 
 **Original verification issue:** Stage 10 used the Penn State educational copy of `CrowdstormingDataJuly1st.csv`, but had not directly downloaded and byte-compared the original OSF version. That limitation is **not fully resolved**: a fresh programmatic request to the OSF public file API did not return an unambiguous directly downloadable file. A successful GitHub Actions job is **not** evidence the OSF direct retrieval succeeded.
 
-**New independent external checksum corroboration:** [ForkSCOPE's pinned public raw-data checksum manifest](https://github.com/TZstats-Columbia/ForkSCOPE/blob/d55603c3b2e58205885aba1ddaf4738a9cf38679/data/raw/CHECKSUMS.txt) records the `data/soccer/soccer_raw.csv` file, explicitly described in its [input provenance manifest](https://github.com/TZstats-Columbia/ForkSCOPE/blob/d55603c3b2e58205885aba1ddaf4738a9cf38679/data/raw/MANIFEST.md) as sourced from **OSF node c9mkx**, at **33,305,306 bytes**, SHA-256 `6dbc24e6f62862b0fc083ef5dc70487cf51739032bd0a04b4fed8aab3a81889a`. Both file size and hash **exactly match** our independently downloaded, pinned Penn State CSV copy. A new [reproducible GitHub Actions check](https://github.com/ds-aziz/CSC2027-AuditCal/actions/runs/40862975429) downloads the education CSV, recomputes its SHA-256, fetches ForkSCOPE's exact pinned checksum list and independently checks both. It passed with `independent_manifest_corrob=true` and `access_status=NO_EXACT_CSV_FOUND_OR_ACCESS_BLOCKED`. No human participant files, AI-authored scripts or previous statistical experiments were executed.
+**New independent external checksum corroboration:** [ForkSCOPE's pinned public raw-data checksum manifest](https://github.com/TZstats-Columbia/ForkSCOPE/blob/d55603c3b2e58205885aba1ddaf4738a9cf38679/data/raw/CHECKSUMS.txt) records the `data/soccer/soccer_raw.csv` file, explicitly described in its [input provenance manifest](https://github.com/TZstats-Columbia/ForkSCOPE/blob/d55603c3b2e58205885aba1ddaf4738a9cf38679/data/raw/MANIFEST.md) as sourced from **OSF node c9mkx**, at **33,305,306 bytes**, SHA-256 `6dbc24e6f62862b0fc083ef5dc70487cf51739032bd0a04b4fed8aab3a81889a`. Both file size and hash **exactly match** our independently downloaded, pinned Penn State CSV copy. A new reproducible GitHub Actions check (historical private CI run 40862975429; access restricted) downloads the education CSV, recomputes its SHA-256, fetches ForkSCOPE's exact pinned checksum list and independently checks both. It passed with `independent_manifest_corrob=true` and `access_status=NO_EXACT_CSV_FOUND_OR_ACCESS_BLOCKED`. No human participant files, AI-authored scripts or previous statistical experiments were executed.
 
 **Interpretation boundary:** This **strongly corroborates** that the public teaching copy is byte-identical to the data copy an independent research team recorded as taken from OSF, *assuming that team's provenance documentation is accurate*. It does **not** establish that we ourselves downloaded the original OSF bytes or that all historical OSF versions are equivalent. Earlier Stage 10 count discrepancy conclusions are unchanged, not upgraded to causal/inferential-error claims.

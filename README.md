@@ -55,7 +55,7 @@ In a separate genuine AI-generated Soccer report, two stated distinct-entity cou
 - [Source-backed Soccer count discrepancy](docs/STAGE10_SECOND_DATASET_REAL_AI_COUNT_DISCREPANCIES.md)
 - [Existing-method comparison and novelty caveat](docs/STAGE12B_LITERATURE_COMPARISON_MATRIX.md)
 
-## Open Master's-level research question
+## Research question
 
 Can safe, source-data numerical recomputation under a fixed dataset/sample/model/estimand specification—plus principled abstention when these cannot be matched—reduce false numerical warnings compared with a values-only baseline? **This remains a hypothesis**, not a demonstrated novelty or benchmark improvement.
 
@@ -66,3 +66,12 @@ Can safe, source-data numerical recomputation under a fixed dataset/sample/model
 - Genuine blind human gold labels **have not been obtained**; the held-out scorer correctly refuses to output accuracy.
 - Multiple adjacent methods already address related code/prose and workflow auditing tasks.
 - The repository is a **curated research snapshot**, with the full exploratory investigation preserved in a separate private research repository. Do not claim publicly inspectable branch contents imply a complete standalone provenance archive.
+
+## Reproducibility and sharing
+
+- [Reproducibility guide](docs/REPRODUCIBILITY.md): install dependencies, run the sample CLI and source-backed demonstration, check pinned data hashes.
+- [Current research boundaries](docs/RESEARCH_BOUNDARIES.md): separates preliminary source checks from independent scientific validation.
+- [Automated software tests](https://github.com/ds-aziz/AuditCal/actions/workflows/tests.yml) verify engineering behavior and the scorer's blocked-without-gold gate. **Passing tests are not claim-auditing accuracy.**
+- **License:** no reuse license has been selected. Source inspection is possible where repository access is granted, but reusing it is not automatically permitted. Source data and released AI reports belong to their respective publishers; no external datasets are redistributed here.
+
+This repository contains no applicant CV, scholarship records or outreach lists. Archived research run links in older JSON evidence records refer to an earlier private study and may not be externally accessible; use the included evidence snapshots and sources instead.

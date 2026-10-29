@@ -1,5 +1,5 @@
 # Stage 12b — Literature comparison matrix and research positioning
-**CSC 2027 / AuditCal | 2026-10-29 | Initial targeted literature scan, not a systematic review**
+**AuditCal | 2026-10-29 | Initial targeted literature scan, not a systematic review**
 **Status:** Literature positioning documented. **Novelty, reliability and application readiness NOT established.**
 
 ## The question for a prospective Master's supervisor
@@ -45,7 +45,7 @@ This is narrower and more defensible than 'a novel AI scientific fact checker'. 
 2. Prespecify a **small held-out pilot** with authentic claims, negative controls and documented alternatives; separate authentic claims from deliberately perturbed examples. Avoid using the 23 previously selected examples as fresh held-out cases.
 3. Define independent adjudication with a second reviewer, exact same-sample/method matching criteria, and flags vs abstentions.
 4. Compare baselines only on overlapping tasks (naive value matching; LLM-only review; arithmetic checks where applicable), and report false-flag rate, precision/recall, coverage and limitations.
-5. In parallel, assemble CSC 2027 research CV, proposal and professor-fit map rather than delaying all application work until full scientific publication.
+5. Maintain a defensible research report and revisit the matched experimental comparison after independent expert annotation.
 
 ## Honest decision for the student
 The initial AuditCal software and exploratory cross-dataset replication are **ready as a portfolio research prototype**. A manuscript-grade, independently validated method is **not complete**. Professor outreach remains on hold until scholarship profile and evidence-backed draft are assessed.
@@ -62,7 +62,7 @@ The initial AuditCal software and exploratory cross-dataset replication are **re
 - **statcheck** public code at commit `db9c9d3ed0b6b0aeda26c0612cbecf5912e1092c` (2026-10-26), [`R/compute_p.R`](https://github.com/MicheleNuijten/statcheck/blob/db9c9d3ed0b6b0aeda26c0612cbecf5912e1092c/R/compute_p.R) and [`R/error_test.R`](https://github.com/MicheleNuijten/statcheck/blob/db9c9d3ed0b6b0aeda26c0612cbecf5912e1092c/R/error_test.R), plus [package FAQ](https://statcheck.io/) and [CRAN documentation](https://search.r-project.org/CRAN/refmans/statcheck/html/statcheck.html).
 - **PaperAudit** public code at commit `de7582b188ca2d867298de978386ec1f5085806f` (2026-09-16), [`detect/README.md`](https://github.com/TU2021/PaperAudit/blob/de7582b188ca2d867298de978386ec1f5085806f/detect/README.md), [`detect/agents.py`](https://github.com/TU2021/PaperAudit/blob/de7582b188ca2d867298de978386ec1f5085806f/detect/agents.py) and [`detect/mas_error_detection.py`](https://github.com/TU2021/PaperAudit/blob/de7582b188ca2d867298de978386ec1f5085806f/detect/mas_error_detection.py), plus [EMNLP paper](https://aclanthology.org/2026.emnlp-main.474/).
 - **Process-auditing comparator:** [Luo et al., PNAS 2026 full text](https://pmc.ncbi.nlm.nih.gov/articles/PMC13663820/); compared methodology as reported in the article, **not the full companion source implementation**.
-- **AuditCal:** current [`src/auditcal/core.py`](https://github.com/ds-aziz/CSC2027-AuditCal/blob/auditcal-starter-v0-1/src/auditcal/core.py) and Stage 11 independently authored Soccer scripts. No external-agent script was executed in this review.
+- **AuditCal:** current [`src/auditcal/core.py`](../src/auditcal/core.py) and Stage 11 independently authored Soccer scripts. No external-agent script was executed in this review.
 
 ### Actual capability boundaries (source checked, not experimental performance)
 
