@@ -48,7 +48,7 @@ This is narrower and more defensible than 'a novel AI scientific fact checker'. 
 5. Maintain a defensible research report and revisit the matched experimental comparison after independent expert annotation.
 
 ## Honest decision for the student
-The initial AuditCal software and exploratory cross-dataset replication are **ready as a portfolio research prototype**. A manuscript-grade, independently validated method is **not complete**. Professor outreach remains on hold until scholarship profile and evidence-backed draft are assessed.
+The initial AuditCal software and source-data reanalyses are an exploratory research prototype, **not yet an independently validated or manuscript-grade method**. Any claim of performance or novel contribution requires an adequate, independently reviewed prospective evaluation.
 
 **One-sentence interview framing:** 'I built a reproducible pilot to investigate whether AI-generated statistical numbers can be independently checked; the experiments taught me that validating a result also requires matching the dataset, statistical specification and uncertainty method, so I want to study verification systems that catch genuine mistakes without mislabeling defensible alternative analyses.'
 
