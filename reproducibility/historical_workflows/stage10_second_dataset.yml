@@ -1,0 +1,49 @@
+name: Stage 10 - Verify second real soccer dataset
+
+on:
+  push:
+    branches: [auditcal-starter-v0-1]
+    paths:
+      - '.github/workflows/stage10_second_dataset.yml'
+      - 'experiments/stage10_soccer_second_dataset.py'
+      - 'experiments/stage10_soccer_source_count_audit.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  independent-soccer-data-source-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install data-analysis libraries only
+        run: python -m pip install 'numpy>=2,<3' 'pandas>=2,<4'
+      - name: Obtain original-study dataset copy from pinned university teaching repository
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p external_data
+          curl --fail --location --retry 2 --silent --show-error --max-time 100 \
+            'https://raw.githubusercontent.com/psu-psychology/psych-490-reproducibility-2024-fall/b35582ee3f2bb4ee2cc8986a0a878081fbad495d/src/surveys/csv/CrowdstormingDataJuly1st.csv' \
+            -o external_data/CrowdstormingDataJuly1st.csv
+          test "$(wc -c < external_data/CrowdstormingDataJuly1st.csv)" -gt 1000000
+          echo 'External CSV copy SHA256 and size:' >> "$GITHUB_STEP_SUMMARY"
+          sha256sum external_data/CrowdstormingDataJuly1st.csv | tee -a "$GITHUB_STEP_SUMMARY"
+      - name: Verify original released AI files and compute non-causal descriptives
+        run: python -m experiments.stage10_soccer_second_dataset external_data/CrowdstormingDataJuly1st.csv
+      - name: Validate published report count against source identifiers
+        run: python -m experiments.stage10_soccer_source_count_audit external_data/CrowdstormingDataJuly1st.csv
+      - name: Archive independent results and limitations (not personal source rows)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stage10-soccer-source-validation-and-descriptive-study
+          path: |
+            results/stage10_soccer_second_dataset.json
+            results/stage10_real_report_count_audit.json
+          if-no-files-found: ignore

@@ -1,0 +1,33 @@
+name: Inspect 10 genuine AI agent reports across five personas
+
+on:
+  push:
+    branches: [auditcal-starter-v0-1]
+    paths:
+      - 'experiments/stage8_multiagent_compare.py'
+      - '.github/workflows/stage8_multiagent_inventory.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exploratory-source-comparison:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - name: Check out AuditCal
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Fetch and hash-check original reports and scripts (NEVER execute them)
+        run: python -m experiments.stage8_multiagent_compare --out results/stage8_multiagent_inventory.json
+      - name: Save source-triage comparison
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stage8-original-agent-report-inventory
+          path: results/stage8_multiagent_inventory.json
+          if-no-files-found: ignore

@@ -1,0 +1,21 @@
+{
+  "source_repository": "https://github.com/amazon-science/agentic-forking-path",
+  "source_file": "experiment_data/workspaces/standard/bedrock_us.anthropic.claude-sonnet-4-5-20250929-v1_0/sample_metr/2025-11-12T17-17-32+0000/mirrored_report.txt",
+  "integrity_check": "Downloaded actual original Git LFS blob; SHA256 and bytes match the published LFS pointer",
+  "sha256": "232c188e9aa155dee0056d79e115e065b85590b67be3972bb1dcae39dca2af23",
+  "byte_length": 16521,
+  "integrity_verified": true,
+  "model_identification": "Claude Sonnet 4.5 inferred from repository path; not independently authenticated",
+  "source_provenance": "Repository published by Amazon Science; underlying source file matches public upstream LFS pointer",
+  "run_url": "https://github.com/ds-aziz/CSC2027-AuditCal/actions/runs/40743603764",
+  "run_status": "success",
+  "test_workflow_url": "https://github.com/ds-aziz/CSC2027-AuditCal/actions/runs/40743603623",
+  "test_result": "32 passed in 1.58s",
+  "candidate_p_value_mentions": 2,
+  "candidate_coefficient_mentions": 0,
+  "statistics_recomputed_from_original_dataset": false,
+  "full_agent_code_verified": false,
+  "automated_error_flags_on_this_report": 0,
+  "independently_verified_errors": 0,
+  "scope": "SOURCE ACQUISITION AND TRIAGE ONLY; not independent benchmark evaluation"
+}

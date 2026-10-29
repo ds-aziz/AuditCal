@@ -1,0 +1,33 @@
+name: Stage 9 - Verify 3 other AI models on METR
+
+on:
+  push:
+    branches: [auditcal-starter-v0-1]
+    paths:
+      - 'experiments/stage9_other_models_inventory.py'
+      - '.github/workflows/stage9_other_models.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verified-agent-source-triage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Check out AuditCal
+        uses: actions/checkout@v4
+      - name: Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Download 6 original reports and scripts and verify upstream hashes
+        run: python -m experiments.stage9_other_models_inventory
+      - name: Archive metadata without original agent source contents
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stage9-3-new-models-source-inventory
+          path: results/stage9_other_models_source_inventory.json
+          if-no-files-found: ignore

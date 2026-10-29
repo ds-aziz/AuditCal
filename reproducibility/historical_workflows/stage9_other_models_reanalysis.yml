@@ -1,0 +1,42 @@
+name: Stage 9 - Independently reproduce 6 other-model reports
+
+on:
+  push:
+    branches: [auditcal-starter-v0-1]
+    paths:
+      - '.github/workflows/stage9_other_models_reanalysis.yml'
+      - 'experiments/stage9_crossmodel_metr_reanalysis.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  cross-model-reanalysis:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install independent scientific packages only
+        run: python -m pip install 'numpy>=2,<3' 'pandas>=2,<4' 'scipy>=1.13,<2' 'statsmodels>=0.14,<0.15'
+      - name: Fetch original METR dataset pinned to official source commit
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p external_data
+          curl --fail --location --silent --show-error --max-time 30 \
+            'https://raw.githubusercontent.com/METR/Measuring-Early-2025-AI-on-Exp-OSS-Devs/7ff2d7670235f531dff77eff58355bd77392f396/data_complete.csv' \
+            -o external_data/metr.csv
+          echo '1493fc46dc379b15d2c39273fa7a7ee98767ff0d90dea113f300d7338f165746  external_data/metr.csv' | sha256sum -c -
+      - name: Recompute six released agent primary statistics, no agent code execution
+        run: python -m experiments.stage9_crossmodel_metr_reanalysis external_data/metr.csv
+      - name: Preserve evidence even when a model fails verification
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stage9-independent-crossmodel-checks
+          path: results/stage9_three_other_models_reanalysis.json
+          if-no-files-found: ignore

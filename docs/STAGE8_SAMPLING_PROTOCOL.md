@@ -1,0 +1,3 @@
+> **Historical research-stage record.** Read the [current research summary](../README.md) and [research roadmap](RESEARCH_ROADMAP.md) for the latest implemented scope and proposed work. Historical stage-specific claims may precede later investigation.
+
+Stage 8 will sample two earliest-timestamped agent runs within each of five published prompt conditions for the METR dataset. This is exploratory and not an independent blind evaluation. Downloaded report and script hashes must match upstream Git LFS pointers. Do not run untrusted agent-authored code. Report zero verified errors unless they are independently recomputed.

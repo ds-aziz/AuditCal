@@ -1,0 +1,38 @@
+name: AuditCal method review - S8 marginal effects and intervals
+on:
+  push:
+    branches: [auditcal-starter-v0-1]
+    paths:
+      - '.github/workflows/heldout_v01_s8_method_diagnostic.yml'
+      - 'experiments/heldout_v01_s8_method_diagnostic.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  s8-method-diagnostic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 17
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install independent scientific dependencies
+        run: python -m pip install 'numpy>=2,<3' 'pandas>=2,<4' 'scipy>=1.13,<2' 'statsmodels>=0.14,<0.16' 'patsy>=1,<2'
+      - name: Download pinned public Soccer educational copy
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p external_data
+          curl -fLsS --retry 2 --max-time 120 'https://raw.githubusercontent.com/psu-psychology/psych-490-reproducibility-2024-fall/b35582ee3f2bb4ee2cc8986a0a878081fbad495d/src/surveys/csv/CrowdstormingDataJuly1st.csv' -o external_data/soccer.csv
+      - name: Compare derivative AME and discrete marginal risk with source-hash check
+        run: python -m experiments.heldout_v01_s8_method_diagnostic --soccer external_data/soccer.csv
+      - name: Archive method diagnostic and warning details
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: s8-method-ambiguity-diagnostic-single-analyst
+          path: results/heldout_v01/s8_method_diagnostic.json
+          if-no-files-found: ignore

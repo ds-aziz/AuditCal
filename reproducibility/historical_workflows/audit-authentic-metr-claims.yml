@@ -1,0 +1,35 @@
+name: Audit 8 authentic METR agent claims
+
+on:
+  push:
+    branches: [auditcal-starter-v0-1]
+    paths:
+      - '.github/workflows/audit-authentic-metr-claims.yml'
+      - 'experiments/audit_authentic_metr_claims.py'
+      - 'results/metr_independent_reanalysis_verified.json'
+      - 'src/auditcal/core.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit-genuine-report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install AuditCal
+        run: python -m pip install -e .
+      - name: Compare 8 actual reported statistics to independent reanalysis
+        run: python -m experiments.audit_authentic_metr_claims
+      - name: Save full claim-by-claim output
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: authentic-agent-8-claim-audit
+          path: results/authentic_metr_claim_audit.json
+          if-no-files-found: ignore

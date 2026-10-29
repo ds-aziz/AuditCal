@@ -1,0 +1,55 @@
+name: Independently reproduce two original AI-agent METR results
+
+on:
+  push:
+    branches: [auditcal-starter-v0-1]
+    paths:
+      - '.github/workflows/reproduce-original-metr-agent.yml'
+      - 'experiments/independent_metr_reanalysis.py'
+      - 'experiments/stage8_independent_method_variants.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  independent-statistical-reanalysis:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install independently specified statistical libraries
+        run: |
+          python -m pip install numpy pandas scipy 'statsmodels>=0.14,<0.15'
+      - name: Download pinned original METR data (NOT model-authored code)
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p external_data
+          curl --fail --location --show-error --silent --max-time 30 \
+            'https://raw.githubusercontent.com/METR/Measuring-Early-2025-AI-on-Exp-OSS-Devs/7ff2d7670235f531dff77eff58355bd77392f396/data_complete.csv' \
+            --output external_data/metr_original_data_complete.csv
+          sha256sum external_data/metr_original_data_complete.csv
+          echo 'Source is official METR public 2025 original randomized study data' >> "$GITHUB_STEP_SUMMARY"
+      - name: Recompute primary mixed effects and secondary cluster-robust model
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m experiments.independent_metr_reanalysis \
+            external_data/metr_original_data_complete.csv \
+            --out results/metr_independent_reanalysis.json
+          echo 'Analyses recomputed without executing any source AI-authored Python script' >> "$GITHUB_STEP_SUMMARY"
+      - name: Calculate alternative agent method variants on same METR source
+        run: python -m experiments.stage8_independent_method_variants external_data/metr_original_data_complete.csv
+      - name: Upload numeric results, including on mismatch
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: metr-independent-numeric-reanalysis
+          path: |
+            results/metr_independent_reanalysis.json
+            results/stage8_independent_method_variants.json
+          if-no-files-found: ignore

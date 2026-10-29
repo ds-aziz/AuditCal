@@ -1,0 +1,49 @@
+name: Stage 11 - Independent soccer statistical calculations
+
+on:
+  push:
+    branches: [auditcal-starter-v0-1]
+    paths:
+      - '.github/workflows/stage11_soccer_independent_models.yml'
+      - 'experiments/stage11_independent_soccer_models.py'
+      - 'experiments/stage11_audit_soccer_claims.py'
+      - 'src/auditcal/core.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  independently-recompute-two-soccer-reports:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install statistical analysis tools
+        run: python -m pip install 'numpy>=2,<3' 'pandas>=2,<4' 'scipy>=1.13,<2' 'statsmodels>=0.14,<0.16' 'patsy>=1,<2'
+      - name: Install AuditCal package
+        run: python -m pip install -e .
+      - name: Download pinned real soccer CSV copy
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p external_data
+          curl -fLsS --retry 2 --max-time 120 'https://raw.githubusercontent.com/psu-psychology/psych-490-reproducibility-2024-fall/b35582ee3f2bb4ee2cc8986a0a878081fbad495d/src/surveys/csv/CrowdstormingDataJuly1st.csv' -o external_data/CrowdstormingDataJuly1st.csv
+          echo 'SHA256 from public educational soccer dataset copy:'
+          sha256sum external_data/CrowdstormingDataJuly1st.csv
+      - name: Independent logistic model and cluster inference (NO released AI code run)
+        run: python -m experiments.stage11_independent_soccer_models
+      - name: Evaluate model-matched and abstained claims with AuditCal
+        run: python -m experiments.stage11_audit_soccer_claims
+      - name: Archive numerical audit and report limitations
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stage11-independent-soccer-models
+          path: |
+            results/stage11_soccer_independent_models.json
+            results/stage11_soccer_auditcal_claims.json
+          if-no-files-found: ignore

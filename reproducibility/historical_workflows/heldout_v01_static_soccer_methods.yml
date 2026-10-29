@@ -1,0 +1,24 @@
+name: Held-out v0.1 - Static inspect Soccer sample specifications
+
+on:
+  push:
+    branches: [auditcal-starter-v0-1]
+    paths:
+      - '.github/workflows/heldout_v01_static_soccer_methods.yml'
+      - 'experiments/heldout_v01_static_soccer_filters.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  read-only-model-sampling:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate LFS hashes then print AI-written code strictly as STATIC TEXT
+        run: python -m experiments.heldout_v01_static_soccer_filters

@@ -1,0 +1,42 @@
+name: Stage 11 - Read pinned soccer agent model specifications
+
+on:
+  push:
+    branches: [auditcal-starter-v0-1]
+    paths:
+      - '.github/workflows/stage11_soccer_model_inspection.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  inspect-published-scripts-as-text:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - name: Download and verify original public released scripts, never execute them
+        shell: python
+        run: |
+          import hashlib, urllib.request
+          from urllib.parse import quote
+          root = 'https://media.githubusercontent.com/media/amazon-science/agentic-forking-path/d489f03b143fcaa9befb8cc443594ff63ec61eaa/experiment_data/workspaces/standard/bedrock_us.anthropic.claude-sonnet-4-5-20250929-v1_0/sample_soccer'
+          files = [
+             ('2025-11-12T17-10-55+0000','final_analysis.py','45b8cd3a3713369264cda6afef032cb220485e6b08bcf4f55608e28ce5c3f01c'),
+             ('2025-11-12T17-10-55+0000','mirrored_report.txt','c1a3f19d89c2d89c44609b49a24eac5f13727888586b1eee3876d2d268eb701e'),
+             ('2025-11-12T17-30-15+0000','final_analysis.py','f20b9373e2e3b05760ceb6401f7ff356898907874b65b1664fa4326dbcd9bf9f'),
+             ('2025-11-12T17-30-15+0000','mirrored_report.txt','71ebb9fe572384a4db90e0c38705783f7f7aafe42a6dd8da249f4281ac3354fe'),
+          ]
+          for ts,filename,expected in files:
+              url = root+'/'+quote(ts,safe='')+'/'+filename
+              req=urllib.request.Request(url,headers={'User-Agent':'AuditCal-model-spec-static-only'})
+              with urllib.request.urlopen(req,timeout=60) as response:
+                  blob=response.read(100000)
+              assert hashlib.sha256(blob).hexdigest()==expected, filename+' source hash mismatch'
+              body=blob.decode('utf-8')
+              lines=body.splitlines()
+              print('START_STATIC_TEXT',ts,filename,'SHA256',expected,'TOTAL_LINES',len(lines),flush=True)
+              for i,line in enumerate(lines,1):
+                  if filename=='final_analysis.py' or i<=115:
+                      print(f'RELEASE_{i:03d}: {line[:300]}',flush=True)
+              print('END_STATIC_TEXT',ts,filename,flush=True)

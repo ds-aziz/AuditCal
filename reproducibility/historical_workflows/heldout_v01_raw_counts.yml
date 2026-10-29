@@ -1,0 +1,42 @@
+name: Held-out v0.1 - Frozen raw source count evidence
+
+on:
+  push:
+    branches: [auditcal-starter-v0-1]
+    paths:
+      - '.github/workflows/heldout_v01_raw_counts.yml'
+      - 'experiments/heldout_v01_count_evidence.py'
+      - 'evaluation/heldout_v01_selected_claims.json'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  independently-recompute-six-source-counts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Download both pinned original-source snapshots (Soccer is teaching copy)
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p external_data
+          curl -fLsS --retry 2 --max-time 120 'https://raw.githubusercontent.com/METR/Measuring-Early-2025-AI-on-Exp-OSS-Devs/7ff2d7670235f531dff77eff58355bd77392f396/data_complete.csv' -o external_data/metr.csv
+          curl -fLsS --retry 2 --max-time 120 'https://raw.githubusercontent.com/psu-psychology/psych-490-reproducibility-2024-fall/b35582ee3f2bb4ee2cc8986a0a878081fbad495d/src/surveys/csv/CrowdstormingDataJuly1st.csv' -o external_data/soccer.csv
+      - name: Recompute six source-only count claims without agent-authored code
+        run: |
+          python -m experiments.heldout_v01_count_evidence \
+            --metr external_data/metr.csv \
+            --soccer external_data/soccer.csv
+      - name: Archive all count evidence and limitations
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: heldout-v01-single-analyst-source-counts
+          path: results/heldout_v01/raw_source_count_evidence.json
+          if-no-files-found: ignore

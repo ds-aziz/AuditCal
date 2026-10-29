@@ -1,0 +1,35 @@
+name: Stage 10 - Audit real AI report distinct counts
+
+on:
+  push:
+    branches: [auditcal-starter-v0-1]
+    paths:
+      - '.github/workflows/stage10_real_count_claims.yml'
+      - 'experiments/stage10_audit_verified_count_claims.py'
+      - 'src/auditcal/core.py'
+      - 'results/stage10_source_count_verified.json'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  independent-source-count-claims:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install minimal AuditCal package
+        run: python -m pip install -e .
+      - name: Check real AI-reported source count facts
+        run: python -m experiments.stage10_audit_verified_count_claims
+      - name: Archive real claim-level flags
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stage10-real-ai-report-two-source-count-discrepancies
+          path: results/stage10_genuine_agent_distinct_count_claims.json
+          if-no-files-found: ignore

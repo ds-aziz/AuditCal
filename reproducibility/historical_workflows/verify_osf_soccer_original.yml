@@ -1,0 +1,31 @@
+name: AuditCal provenance - OSF original Soccer dataset byte comparison
+
+on:
+  push:
+    branches: [auditcal-starter-v0-1]
+    paths:
+      - '.github/workflows/verify_osf_soccer_original.yml'
+      - 'experiments/verify_osf_soccer_original.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-provenance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Resolve public OSF original and byte-check pinned teaching CSV without running agent analyses
+        run: python experiments/verify_osf_soccer_original.py
+      - name: Archive verdict and access failures (not binary files)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: osf-original-soccer-provenance
+          path: results/osf_original_soccer_provenance.json
+          if-no-files-found: ignore

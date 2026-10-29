@@ -1,0 +1,59 @@
+name: Inspect original agent report and code (no execution)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [auditcal-starter-v0-1]
+    paths:
+      - '.github/workflows/inspect-upstream-agent-code.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  static-inspection:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Fetch three source files, verify their original SHA-256
+        shell: bash
+        run: |
+          set -euo pipefail
+          BASE='https://media.githubusercontent.com/media/amazon-science/agentic-forking-path/main/experiment_data/workspaces/standard/bedrock_us.anthropic.claude-sonnet-4-5-20250929-v1_0/sample_metr/2025-11-12T17-17-32%2B0000'
+          mkdir -p original_agent
+          curl --fail --location --silent --show-error --max-time 30 "$BASE/mirrored_report.txt" -o original_agent/mirrored_report.txt
+          curl --fail --location --silent --show-error --max-time 30 "$BASE/final_analysis.py" -o original_agent/final_analysis.py
+          curl --fail --location --silent --show-error --max-time 30 "$BASE/transcript.json" -o original_agent/transcript.json
+          echo '232c188e9aa155dee0056d79e115e065b85590b67be3972bb1dcae39dca2af23  original_agent/mirrored_report.txt' > expected.sha256
+          echo '2b1493d36e999f1f1445e11b90490f53830bfe99c19e0584646fff17e29b6e54  original_agent/final_analysis.py' >> expected.sha256
+          echo '2d8428351389727c39da5edf1e3e57d9e258f5f16166880d5bcd960fe1959b8d  original_agent/transcript.json' >> expected.sha256
+          sha256sum --check expected.sha256
+          echo 'All three authentic released source blobs hash-verified' >> "$GITHUB_STEP_SUMMARY"
+      - name: Static inspection only (DO NOT execute released AI code)
+        shell: bash
+        run: |
+          python - <<'PY'
+          import ast, json, re
+          from pathlib import Path
+          code = Path('original_agent/final_analysis.py').read_text()
+          report = Path('original_agent/mirrored_report.txt').read_text()
+          obj = json.loads(Path('original_agent/transcript.json').read_text())
+          print('=== ORIGINAL AGENT PYTHON CODE, untrusted text only ===')
+          for n,line in enumerate(code.splitlines()[:270],1):
+              print(f'{n:03d}: {line[:220]}')
+          print('=== ORIGINAL AGENT REPORT, selected evidence lines ===')
+          for n,line in enumerate(report.splitlines(),1):
+              if re.search(r'p.value|regression|estimand|effect|signific|model|sample|covariat|confidence|hours|treat|random|method|control|SE|standard error|95%|CI',line,re.I):
+                  print(f'{n:03d}: {line[:270]}')
+          print('=== TRANSCRIPT HIGH-LEVEL JSON ===')
+          print('Top-level type',type(obj).__name__)
+          print('Keys',list(obj)[:35] if isinstance(obj,dict) else 'list length '+str(len(obj)))
+          try:
+              tree=ast.parse(code)
+              print('AST PARSE OK; top-level imports:',[n.module for n in tree.body if isinstance(n,ast.ImportFrom)])
+          except SyntaxError as e: print('AST PARSE ERROR',str(e))
+          PY

@@ -1,0 +1,31 @@
+name: Stage 10 - Verify soccer AI reports and new dataset
+
+on:
+  push:
+    branches: [auditcal-starter-v0-1]
+    paths:
+      - '.github/workflows/stage10_soccer_source.yml'
+      - 'experiments/stage10_soccer_source_triage.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-second-dataset:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify original soccer agent reports and independently sourced dataset
+        run: python -m experiments.stage10_soccer_source_triage
+      - name: Preserve validation metadata, not data contents
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: soccer-public-research-source-triage
+          path: results/stage10_soccer_provenance.json
+          if-no-files-found: ignore

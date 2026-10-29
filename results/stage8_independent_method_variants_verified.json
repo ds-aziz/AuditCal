@@ -1,0 +1,92 @@
+{
+  "data_source": "official METR study release, fixed commit 7ff2d7670",
+  "dataset_sha256": "1493fc46dc379b15d2c39273fa7a7ee98767ff0d90dea113f300d7338f165746",
+  "observations": 246,
+  "developers": 16,
+  "analysis_type": "Independent implementation of method descriptions; not executing agents",
+  "methods": {
+    "original_standard_mixed": {
+      "method": "Mixed random developer intercept, REML, task size predicted without AI",
+      "beta": 0.1458387024953222,
+      "gmr": 1.1570095502457518,
+      "p_value": 0.06583731110737423,
+      "se": 0.07928042755986056,
+      "N": 246
+    },
+    "negative_two_stage_as_reported": {
+      "method": "Two-stage equal-weight mean per-developer OLS treatment coefficient",
+      "beta": 0.07796261278719424,
+      "gmr": 1.0810822392627635,
+      "p_value": 0.44455836925280373,
+      "se": 0.09928930162427937,
+      "N": 246,
+      "developers_with_effect": 16,
+      "t": 0.785206578269757
+    },
+    "negative_two_stage_excluding_low_information": {
+      "method": "Two-stage equal-weight mean per-developer OLS treatment coefficient",
+      "beta": 0.12442184777578483,
+      "gmr": 1.1324935101149254,
+      "p_value": 0.2059554052582134,
+      "se": 0.09380773590586862,
+      "N": 246,
+      "developers_with_effect": 15,
+      "t": 1.3263495443556592
+    },
+    "positive_claimed_FE_no_intercept": {
+      "method": "OLS with 15 developer indicators BUT NO INTERCEPT",
+      "beta": 0.12325698046712702,
+      "gmr": 1.1311750734986656,
+      "p_value": 0.24454926320248574,
+      "se": 0.10176280596163573,
+      "N": 246,
+      "df": 15,
+      "num_parameters": 17
+    },
+    "proper_developer_FE_with_intercept": {
+      "method": "FE + developer reference intercept + cluster robust",
+      "beta": 0.12528954968742126,
+      "gmr": 1.1334766033528274,
+      "p_value": 0.23763861584331947,
+      "se": 0.10186111155339422,
+      "N": 246,
+      "df": 15,
+      "num_parameters": 18
+    },
+    "confirmation_ML_other_covariate": {
+      "method": "Mixed random developer intercept, ML, task size predicted with AI",
+      "beta": 0.18877207959149744,
+      "gmr": 1.2077656466706226,
+      "p_value": 0.02133350350293152,
+      "se": 0.08200245572946067,
+      "N": 246,
+      "p_from_wald_normal": 0.02133350350293152,
+      "p_using_task_level_t": 0.022183298630970964
+    },
+    "strong_confirmation_nearest_matching": {
+      "method": "Within-developer nearest-predicted-task-time matching (with replacement) and t-test",
+      "beta": 0.2608764478348862,
+      "gmr": 1.2980672765032188,
+      "p_value": 0.020984784696094244,
+      "se": 0.10034413732464624,
+      "N": 246,
+      "matched_developers": 15,
+      "skipped_developer_ids": [
+        "229"
+      ],
+      "t": 2.599817535835354
+    }
+  },
+  "scientific_interpretation": "Distinct covariates, weighting, samples and inference designs cannot be treated as identical estimands. Some implementation choices may require review; correctness needs design-specific assessment.",
+  "not_benchmark": true,
+  "provenance": {
+    "github_actions_run": "https://github.com/ds-aziz/CSC2027-AuditCal/actions/runs/40747009492",
+    "job_id": 123023363836,
+    "workflow_result": "success",
+    "evaluation_stage": "EXPLORATORY METHODS REPRODUCTION, NOT INDEPENDENT AGENT ACCURACY TEST",
+    "independent_source_code": true,
+    "agent_code_executed": false,
+    "external_source": "METR official data public fixed commit 7ff2d767",
+    "n_original_hash_verified_agent_reports": 10
+  }
+}

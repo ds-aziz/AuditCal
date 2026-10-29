@@ -1,0 +1,190 @@
+{
+  "source_dataset": "https://github.com/METR/Measuring-Early-2025-AI-on-Exp-OSS-Devs/blob/7ff2d7670235f531dff77eff58355bd77392f396/data_complete.csv",
+  "dataset_sha256": "1493fc46dc379b15d2c39273fa7a7ee98767ff0d90dea113f300d7338f165746",
+  "source_agent_reports": "amazon-science/agentic-forking-path",
+  "original_agent_scripts_executed": false,
+  "researcher_selected_model_specifications": true,
+  "same_model_across_every_comparison": false,
+  "report_count": 6,
+  "distinct_models_tested": 3,
+  "tolerance_gmr": 0.003,
+  "tolerance_p": 0.003,
+  "models": {
+    "standard": {
+      "formula": "log_initial ~ ai_treatment + log_pred_without_ai",
+      "outcome_transformation": "natural log of initial minutes",
+      "n": 246,
+      "developers": 16,
+      "beta": 0.14583870249532263,
+      "gmr_from_transformed_outcome": 1.1570095502457522,
+      "p_value": 0.06583731110737334,
+      "se": 0.07928042755986053,
+      "reml": true,
+      "converged": true
+    },
+    "coder_variant": {
+      "formula": "log_initial_plus1 ~ ai_treatment + average_predicted_time",
+      "outcome_transformation": "natural log of (initial minutes + 1)",
+      "n": 246,
+      "developers": 16,
+      "beta": 0.13034431716224268,
+      "gmr_from_transformed_outcome": 1.1392205689961037,
+      "p_value": 0.11581278359833024,
+      "se": 0.08288489628728428,
+      "reml": true,
+      "converged": true
+    }
+  },
+  "checks": [
+    {
+      "ai_model": "Claude Haiku 4.5",
+      "run_id": "2025-11-14T14-53-43+0000",
+      "original_report_gmr": 1.157,
+      "original_report_p_value": 0.0658,
+      "method_identity_researcher_mapped": "standard",
+      "independently_recomputed": {
+        "formula": "log_initial ~ ai_treatment + log_pred_without_ai",
+        "outcome_transformation": "natural log of initial minutes",
+        "n": 246,
+        "developers": 16,
+        "beta": 0.14583870249532263,
+        "gmr_from_transformed_outcome": 1.1570095502457522,
+        "p_value": 0.06583731110737334,
+        "se": 0.07928042755986053,
+        "reml": true,
+        "converged": true
+      },
+      "difference_gmr": 0.000009550245752221187,
+      "difference_p": 0.00003731110737334453,
+      "numeric_status": "AGREES_WITH_REPORTED_MODEL",
+      "manual_transcription_not_blind": true
+    },
+    {
+      "ai_model": "Claude Haiku 4.5",
+      "run_id": "2025-11-14T15-33-39+0000",
+      "original_report_gmr": 1.157,
+      "original_report_p_value": 0.067,
+      "method_identity_researcher_mapped": "standard",
+      "independently_recomputed": {
+        "formula": "log_initial ~ ai_treatment + log_pred_without_ai",
+        "outcome_transformation": "natural log of initial minutes",
+        "n": 246,
+        "developers": 16,
+        "beta": 0.14583870249532263,
+        "gmr_from_transformed_outcome": 1.1570095502457522,
+        "p_value": 0.06583731110737334,
+        "se": 0.07928042755986053,
+        "reml": true,
+        "converged": true
+      },
+      "difference_gmr": 0.000009550245752221187,
+      "difference_p": -0.001162688892626662,
+      "numeric_status": "AGREES_WITH_REPORTED_MODEL",
+      "manual_transcription_not_blind": true
+    },
+    {
+      "ai_model": "Qwen3 235B",
+      "run_id": "2025-12-11T22-20-15+0000",
+      "original_report_gmr": 1.157,
+      "original_report_p_value": 0.066,
+      "method_identity_researcher_mapped": "standard",
+      "independently_recomputed": {
+        "formula": "log_initial ~ ai_treatment + log_pred_without_ai",
+        "outcome_transformation": "natural log of initial minutes",
+        "n": 246,
+        "developers": 16,
+        "beta": 0.14583870249532263,
+        "gmr_from_transformed_outcome": 1.1570095502457522,
+        "p_value": 0.06583731110737334,
+        "se": 0.07928042755986053,
+        "reml": true,
+        "converged": true
+      },
+      "difference_gmr": 0.000009550245752221187,
+      "difference_p": -0.0001626888926266612,
+      "numeric_status": "AGREES_WITH_REPORTED_MODEL",
+      "manual_transcription_not_blind": true
+    },
+    {
+      "ai_model": "Qwen3 235B",
+      "run_id": "2025-12-11T22-22-18+0000",
+      "original_report_gmr": 1.157,
+      "original_report_p_value": 0.066,
+      "method_identity_researcher_mapped": "standard",
+      "independently_recomputed": {
+        "formula": "log_initial ~ ai_treatment + log_pred_without_ai",
+        "outcome_transformation": "natural log of initial minutes",
+        "n": 246,
+        "developers": 16,
+        "beta": 0.14583870249532263,
+        "gmr_from_transformed_outcome": 1.1570095502457522,
+        "p_value": 0.06583731110737334,
+        "se": 0.07928042755986053,
+        "reml": true,
+        "converged": true
+      },
+      "difference_gmr": 0.000009550245752221187,
+      "difference_p": -0.0001626888926266612,
+      "numeric_status": "AGREES_WITH_REPORTED_MODEL",
+      "manual_transcription_not_blind": true
+    },
+    {
+      "ai_model": "Qwen3 Coder 480B",
+      "run_id": "2025-12-11T22-15-03+0000",
+      "original_report_gmr": 1.157,
+      "original_report_p_value": 0.0658,
+      "method_identity_researcher_mapped": "standard",
+      "independently_recomputed": {
+        "formula": "log_initial ~ ai_treatment + log_pred_without_ai",
+        "outcome_transformation": "natural log of initial minutes",
+        "n": 246,
+        "developers": 16,
+        "beta": 0.14583870249532263,
+        "gmr_from_transformed_outcome": 1.1570095502457522,
+        "p_value": 0.06583731110737334,
+        "se": 0.07928042755986053,
+        "reml": true,
+        "converged": true
+      },
+      "difference_gmr": 0.000009550245752221187,
+      "difference_p": 0.00003731110737334453,
+      "numeric_status": "AGREES_WITH_REPORTED_MODEL",
+      "manual_transcription_not_blind": true
+    },
+    {
+      "ai_model": "Qwen3 Coder 480B",
+      "run_id": "2025-12-11T22-17-28+0000",
+      "original_report_gmr": 1.1392,
+      "original_report_p_value": 0.1158,
+      "method_identity_researcher_mapped": "coder_variant",
+      "independently_recomputed": {
+        "formula": "log_initial_plus1 ~ ai_treatment + average_predicted_time",
+        "outcome_transformation": "natural log of (initial minutes + 1)",
+        "n": 246,
+        "developers": 16,
+        "beta": 0.13034431716224268,
+        "gmr_from_transformed_outcome": 1.1392205689961037,
+        "p_value": 0.11581278359833024,
+        "se": 0.08288489628728428,
+        "reml": true,
+        "converged": true
+      },
+      "difference_gmr": 0.000020568996103698112,
+      "difference_p": 0.000012783598330234902,
+      "numeric_status": "AGREES_WITH_REPORTED_MODEL",
+      "manual_transcription_not_blind": true
+    }
+  ],
+  "methodological_note": "The Qwen3 Coder variant uses log(initial_minutes+1), not log(initial_minutes). Exponentiating its coefficient estimates a geometric ratio of (minutes+1), not literally the unshifted time's geometric mean ratio. Its task-size predictor also differs.",
+  "narrative_review_candidate": "A Haiku report says the primary hypothesis is SUPPORTED although its own reported primary p value is 0.067 (>0.05). Investigate reported decision rule before labeling the narrative scientifically wrong.",
+  "independently_adjudicated_narrative_errors": 0,
+  "independent_holdout_size": 0,
+  "status": "EXPLORATORY_NUMERIC_REPLICATION_NOT_BENCHMARK",
+  "execution": {
+    "github_run": "https://github.com/ds-aziz/CSC2027-AuditCal/actions/runs/40748913751",
+    "github_job_id": 123030007930,
+    "result": "success",
+    "type": "Independent re-computation from source data",
+    "agent_generated_code_executed": false
+  }
+}

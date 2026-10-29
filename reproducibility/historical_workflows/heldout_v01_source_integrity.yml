@@ -1,0 +1,32 @@
+name: Held-out v0.1 - Verify eight frozen original AI sources
+
+on:
+  push:
+    branches: [auditcal-starter-v0-1]
+    paths:
+      - '.github/workflows/heldout_v01_source_integrity.yml'
+      - 'experiments/heldout_v01_source_integrity.py'
+      - 'evaluation/heldout_v01_lfs_sha_lock.json'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  original-source-integrity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify eight reports and eight agent scripts from pinned upstream LFS
+        run: python -m experiments.heldout_v01_source_integrity
+      - name: Archive original released sources as read-only texts and integrity summary
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: heldout-v01-static-source-audit
+          path: results/heldout_v01/
+          if-no-files-found: ignore

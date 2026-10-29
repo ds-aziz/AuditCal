@@ -1,0 +1,31 @@
+name: Inspect methods in ten real agent scripts without execution
+
+on:
+  push:
+    branches: [auditcal-starter-v0-1]
+    paths:
+      - 'experiments/stage8_spec_inspection.py'
+      - '.github/workflows/stage8_static_methods.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  static-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Read verified reports and Python code only; NEVER execute agent code
+        run: python -m experiments.stage8_spec_inspection
+      - name: Archive evidence for honest methods classification
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stage8-methods-static-inspection
+          path: results/stage8_method_inspection.json
+          if-no-files-found: ignore
