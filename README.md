@@ -70,6 +70,7 @@ Can safe, source-data numerical recomputation under a fixed dataset/sample/model
 ## Reproducibility and sharing
 
 - [Reproducibility guide](docs/REPRODUCIBILITY.md): install dependencies, run the sample CLI and source-backed demonstration, check pinned data hashes.
+- [Third-party sources and notices](docs/THIRD_PARTY_SOURCES.md): original data and released-agent source attribution, confirmed license metadata and unresolved reuse conditions.
 - [Current research boundaries](docs/RESEARCH_BOUNDARIES.md): separates preliminary source checks from independent scientific validation.
 - [Automated software tests](https://github.com/ds-aziz/AuditCal/actions/workflows/tests.yml) verify engineering behavior and the scorer's blocked-without-gold gate. **Passing tests are not claim-auditing accuracy.**
 - **License:** no reuse license has been selected. Source inspection is possible where repository access is granted, but reusing it is not automatically permitted. Source data and released AI reports belong to their respective publishers; no external datasets are redistributed here.
