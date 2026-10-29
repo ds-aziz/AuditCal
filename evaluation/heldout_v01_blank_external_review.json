@@ -1,0 +1,118 @@
+{
+  "version": "heldout_v01_blind_independent_review_form",
+  "status": "BLANK_NOT_REVIEWED",
+  "protocol": "evaluation/HELDOUT_V01_PROTOCOL.md",
+  "guide": "evaluation/HELDOUT_V01_BLIND_REVIEW_GUIDE.md",
+  "reviewer_name": null,
+  "reviewer_expertise": null,
+  "review_date": null,
+  "independent_from_AuditCal_development": null,
+  "prior_seen_researcher_predictions": null,
+  "source_data_SHA_verified": null,
+  "raw_reviewer_code_reference": null,
+  "notes": "This is a blank template for independent statistical review. Never fill with assistant simulations and call them human gold.",
+  "claims": [
+    {
+      "claim_id": "S5-C1",
+      "report_id": "S5",
+      "reported": 10.9,
+      "units": "percent change initial time",
+      "reviewer_independent_numeric_result": null,
+      "reviewer_model_description": null,
+      "reviewer_provenance_and_code_lines": null,
+      "reviewer_software_version": null,
+      "reviewer_convergence_warnings": null,
+      "reviewer_disposition": null,
+      "reviewer_rationale": null,
+      "reviewer_confidence": null,
+      "reviewer_has_seen_prior_AuditCal_decision": null
+    },
+    {
+      "claim_id": "S5-C2",
+      "report_id": "S5",
+      "reported": [
+        0.941,
+        1.308
+      ],
+      "units": "primary GMR 95% CI",
+      "reviewer_independent_numeric_result": null,
+      "reviewer_model_description": null,
+      "reviewer_provenance_and_code_lines": null,
+      "reviewer_software_version": null,
+      "reviewer_convergence_warnings": null,
+      "reviewer_disposition": null,
+      "reviewer_rationale": null,
+      "reviewer_confidence": null,
+      "reviewer_has_seen_prior_AuditCal_decision": null
+    },
+    {
+      "claim_id": "S5-C3",
+      "report_id": "S5",
+      "reported": 0.215,
+      "units": "primary two-sided p",
+      "reviewer_independent_numeric_result": null,
+      "reviewer_model_description": null,
+      "reviewer_provenance_and_code_lines": null,
+      "reviewer_software_version": null,
+      "reviewer_convergence_warnings": null,
+      "reviewer_disposition": null,
+      "reviewer_rationale": null,
+      "reviewer_confidence": null,
+      "reviewer_has_seen_prior_AuditCal_decision": null
+    },
+    {
+      "claim_id": "S6-C2",
+      "report_id": "S6",
+      "reported": [
+        0.99,
+        1.351
+      ],
+      "units": "primary GMR 95% CI",
+      "reviewer_independent_numeric_result": null,
+      "reviewer_model_description": null,
+      "reviewer_provenance_and_code_lines": null,
+      "reviewer_software_version": null,
+      "reviewer_convergence_warnings": null,
+      "reviewer_disposition": null,
+      "reviewer_rationale": null,
+      "reviewer_confidence": null,
+      "reviewer_has_seen_prior_AuditCal_decision": null
+    },
+    {
+      "claim_id": "S8-C2",
+      "report_id": "S8",
+      "reported": 0.0811,
+      "units": "adjusted risk difference percentage points",
+      "reviewer_independent_numeric_result": null,
+      "reviewer_model_description": null,
+      "reviewer_provenance_and_code_lines": null,
+      "reviewer_software_version": null,
+      "reviewer_convergence_warnings": null,
+      "reviewer_disposition": null,
+      "reviewer_rationale": null,
+      "reviewer_confidence": null,
+      "reviewer_has_seen_prior_AuditCal_decision": null
+    },
+    {
+      "claim_id": "S8-C3",
+      "report_id": "S8",
+      "reported": [
+        -0.0002,
+        0.202
+      ],
+      "units": "RD 95% CI percentage points",
+      "reviewer_independent_numeric_result": null,
+      "reviewer_model_description": null,
+      "reviewer_provenance_and_code_lines": null,
+      "reviewer_software_version": null,
+      "reviewer_convergence_warnings": null,
+      "reviewer_disposition": null,
+      "reviewer_rationale": null,
+      "reviewer_confidence": null,
+      "reviewer_has_seen_prior_AuditCal_decision": null
+    }
+  ],
+  "reviewer_signature": null,
+  "adjudicator_signature": null,
+  "gold_labels_approved": false
+}

@@ -1,0 +1,255 @@
+{
+  "schema_version": "heldout_v01_both_prediction_methods",
+  "status": "BLANK_TEMPLATE_NO_PREDICTIONS_EXIST",
+  "notes": "Fill ONLY after independent human review has been completed and labels locked. Predictions must be derived from reproducible code and source-matched evidence; template is not a measured benchmark.",
+  "run_metadata": {
+    "auditcal_code_commit": null,
+    "baseline_code_commit": null,
+    "source_evidence_manifest": null,
+    "run_log_url": null
+  },
+  "auditcal": [
+    {
+      "claim_id": "S1-C1",
+      "status": null,
+      "reason": null
+    },
+    {
+      "claim_id": "S1-C2",
+      "status": null,
+      "reason": null
+    },
+    {
+      "claim_id": "S1-C3",
+      "status": null,
+      "reason": null
+    },
+    {
+      "claim_id": "S2-C1",
+      "status": null,
+      "reason": null
+    },
+    {
+      "claim_id": "S2-C2",
+      "status": null,
+      "reason": null
+    },
+    {
+      "claim_id": "S2-C3",
+      "status": null,
+      "reason": null
+    },
+    {
+      "claim_id": "S3-C1",
+      "status": null,
+      "reason": null
+    },
+    {
+      "claim_id": "S3-C2",
+      "status": null,
+      "reason": null
+    },
+    {
+      "claim_id": "S3-C3",
+      "status": null,
+      "reason": null
+    },
+    {
+      "claim_id": "S4-C1",
+      "status": null,
+      "reason": null
+    },
+    {
+      "claim_id": "S4-C2",
+      "status": null,
+      "reason": null
+    },
+    {
+      "claim_id": "S4-C3",
+      "status": null,
+      "reason": null
+    },
+    {
+      "claim_id": "S5-C1",
+      "status": null,
+      "reason": null
+    },
+    {
+      "claim_id": "S5-C2",
+      "status": null,
+      "reason": null
+    },
+    {
+      "claim_id": "S5-C3",
+      "status": null,
+      "reason": null
+    },
+    {
+      "claim_id": "S6-C1",
+      "status": null,
+      "reason": null
+    },
+    {
+      "claim_id": "S6-C2",
+      "status": null,
+      "reason": null
+    },
+    {
+      "claim_id": "S6-C3",
+      "status": null,
+      "reason": null
+    },
+    {
+      "claim_id": "S7-C1",
+      "status": null,
+      "reason": null
+    },
+    {
+      "claim_id": "S7-C2",
+      "status": null,
+      "reason": null
+    },
+    {
+      "claim_id": "S7-C3",
+      "status": null,
+      "reason": null
+    },
+    {
+      "claim_id": "S8-C1",
+      "status": null,
+      "reason": null
+    },
+    {
+      "claim_id": "S8-C2",
+      "status": null,
+      "reason": null
+    },
+    {
+      "claim_id": "S8-C3",
+      "status": null,
+      "reason": null
+    }
+  ],
+  "naive": [
+    {
+      "claim_id": "S1-C1",
+      "status": null,
+      "reason": null
+    },
+    {
+      "claim_id": "S1-C2",
+      "status": null,
+      "reason": null
+    },
+    {
+      "claim_id": "S1-C3",
+      "status": null,
+      "reason": null
+    },
+    {
+      "claim_id": "S2-C1",
+      "status": null,
+      "reason": null
+    },
+    {
+      "claim_id": "S2-C2",
+      "status": null,
+      "reason": null
+    },
+    {
+      "claim_id": "S2-C3",
+      "status": null,
+      "reason": null
+    },
+    {
+      "claim_id": "S3-C1",
+      "status": null,
+      "reason": null
+    },
+    {
+      "claim_id": "S3-C2",
+      "status": null,
+      "reason": null
+    },
+    {
+      "claim_id": "S3-C3",
+      "status": null,
+      "reason": null
+    },
+    {
+      "claim_id": "S4-C1",
+      "status": null,
+      "reason": null
+    },
+    {
+      "claim_id": "S4-C2",
+      "status": null,
+      "reason": null
+    },
+    {
+      "claim_id": "S4-C3",
+      "status": null,
+      "reason": null
+    },
+    {
+      "claim_id": "S5-C1",
+      "status": null,
+      "reason": null
+    },
+    {
+      "claim_id": "S5-C2",
+      "status": null,
+      "reason": null
+    },
+    {
+      "claim_id": "S5-C3",
+      "status": null,
+      "reason": null
+    },
+    {
+      "claim_id": "S6-C1",
+      "status": null,
+      "reason": null
+    },
+    {
+      "claim_id": "S6-C2",
+      "status": null,
+      "reason": null
+    },
+    {
+      "claim_id": "S6-C3",
+      "status": null,
+      "reason": null
+    },
+    {
+      "claim_id": "S7-C1",
+      "status": null,
+      "reason": null
+    },
+    {
+      "claim_id": "S7-C2",
+      "status": null,
+      "reason": null
+    },
+    {
+      "claim_id": "S7-C3",
+      "status": null,
+      "reason": null
+    },
+    {
+      "claim_id": "S8-C1",
+      "status": null,
+      "reason": null
+    },
+    {
+      "claim_id": "S8-C2",
+      "status": null,
+      "reason": null
+    },
+    {
+      "claim_id": "S8-C3",
+      "status": null,
+      "reason": null
+    }
+  ]
+}

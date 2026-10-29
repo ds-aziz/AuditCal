@@ -1,0 +1,292 @@
+{
+  "schema_version": "heldout_v01_full_24_blind_review",
+  "status": "BLANK_TEMPLATE_NO_HUMAN_REVIEW_DONE",
+  "notes": "Copy file twice, one for each genuinely different independent statistics reviewer. Do not send researcher's predictions or answers before their first recorded decisions. This blank template provides NO gold labels.",
+  "reviewer": {
+    "reviewer_id": null,
+    "name": null,
+    "signed_date": null,
+    "signed_attestation": null,
+    "independent_human": null,
+    "blind_to_system_predictions": null,
+    "no_involvement_in_auditcal_development": null
+  },
+  "claims": [
+    {
+      "claim_id": "S1-C1",
+      "report_id": "S1",
+      "source_report_sha256": "6f756bf5c67d4aed08afbed1f992d3ebec8c8aac32e7b5607ba5e7d21de95744",
+      "claim_type": "distinct_count",
+      "reported": 16,
+      "gold_label": null,
+      "independent_reanalysis_reference": null,
+      "source_method_reference": null,
+      "rationale": null
+    },
+    {
+      "claim_id": "S1-C2",
+      "report_id": "S1",
+      "source_report_sha256": "6f756bf5c67d4aed08afbed1f992d3ebec8c8aac32e7b5607ba5e7d21de95744",
+      "claim_type": "sample_size",
+      "reported": 246,
+      "gold_label": null,
+      "independent_reanalysis_reference": null,
+      "source_method_reference": null,
+      "rationale": null
+    },
+    {
+      "claim_id": "S1-C3",
+      "report_id": "S1",
+      "source_report_sha256": "6f756bf5c67d4aed08afbed1f992d3ebec8c8aac32e7b5607ba5e7d21de95744",
+      "claim_type": "coefficient",
+      "reported": 1.133,
+      "gold_label": null,
+      "independent_reanalysis_reference": null,
+      "source_method_reference": null,
+      "rationale": null
+    },
+    {
+      "claim_id": "S2-C1",
+      "report_id": "S2",
+      "source_report_sha256": "f715c3d93a454676a3fc5a776ec9ad2a6ee3acf8bebcc50fabe3964dff325506",
+      "claim_type": "sample_size",
+      "reported": 246,
+      "gold_label": null,
+      "independent_reanalysis_reference": null,
+      "source_method_reference": null,
+      "rationale": null
+    },
+    {
+      "claim_id": "S2-C2",
+      "report_id": "S2",
+      "source_report_sha256": "f715c3d93a454676a3fc5a776ec9ad2a6ee3acf8bebcc50fabe3964dff325506",
+      "claim_type": "distinct_count",
+      "reported": 16,
+      "gold_label": null,
+      "independent_reanalysis_reference": null,
+      "source_method_reference": null,
+      "rationale": null
+    },
+    {
+      "claim_id": "S2-C3",
+      "report_id": "S2",
+      "source_report_sha256": "f715c3d93a454676a3fc5a776ec9ad2a6ee3acf8bebcc50fabe3964dff325506",
+      "claim_type": "coefficient",
+      "reported": 13.35,
+      "gold_label": null,
+      "independent_reanalysis_reference": null,
+      "source_method_reference": null,
+      "rationale": null
+    },
+    {
+      "claim_id": "S3-C1",
+      "report_id": "S3",
+      "source_report_sha256": "87c029dc8ada5fb39faab0bfdb2938e3a93d2f90eeb8236ce3fed26c67437ee3",
+      "claim_type": "sample_size",
+      "reported": 115457,
+      "gold_label": null,
+      "independent_reanalysis_reference": null,
+      "source_method_reference": null,
+      "rationale": null
+    },
+    {
+      "claim_id": "S3-C2",
+      "report_id": "S3",
+      "source_report_sha256": "87c029dc8ada5fb39faab0bfdb2938e3a93d2f90eeb8236ce3fed26c67437ee3",
+      "claim_type": "coefficient",
+      "reported": 0.1771,
+      "gold_label": null,
+      "independent_reanalysis_reference": null,
+      "source_method_reference": null,
+      "rationale": null
+    },
+    {
+      "claim_id": "S3-C3",
+      "report_id": "S3",
+      "source_report_sha256": "87c029dc8ada5fb39faab0bfdb2938e3a93d2f90eeb8236ce3fed26c67437ee3",
+      "claim_type": "confidence_interval",
+      "reported": [
+        -0.0191,
+        0.3734
+      ],
+      "gold_label": null,
+      "independent_reanalysis_reference": null,
+      "source_method_reference": null,
+      "rationale": null
+    },
+    {
+      "claim_id": "S4-C1",
+      "report_id": "S4",
+      "source_report_sha256": "d289552abbef9fa0fa591757b154f9fec8194bdba0929599fe4f9718a5c17208",
+      "claim_type": "sample_size",
+      "reported": 146028,
+      "gold_label": null,
+      "independent_reanalysis_reference": null,
+      "source_method_reference": null,
+      "rationale": null
+    },
+    {
+      "claim_id": "S4-C2",
+      "report_id": "S4",
+      "source_report_sha256": "d289552abbef9fa0fa591757b154f9fec8194bdba0929599fe4f9718a5c17208",
+      "claim_type": "distinct_count",
+      "reported": 4,
+      "gold_label": null,
+      "independent_reanalysis_reference": null,
+      "source_method_reference": null,
+      "rationale": null
+    },
+    {
+      "claim_id": "S4-C3",
+      "report_id": "S4",
+      "source_report_sha256": "d289552abbef9fa0fa591757b154f9fec8194bdba0929599fe4f9718a5c17208",
+      "claim_type": "coefficient",
+      "reported": 0.25,
+      "gold_label": null,
+      "independent_reanalysis_reference": null,
+      "source_method_reference": null,
+      "rationale": null
+    },
+    {
+      "claim_id": "S5-C1",
+      "report_id": "S5",
+      "source_report_sha256": "f9ce0b7d376e6309941ef37f3967ec9f1c5e0df4a602992d4f9d29cb1ad756a4",
+      "claim_type": "coefficient",
+      "reported": 10.9,
+      "gold_label": null,
+      "independent_reanalysis_reference": null,
+      "source_method_reference": null,
+      "rationale": null
+    },
+    {
+      "claim_id": "S5-C2",
+      "report_id": "S5",
+      "source_report_sha256": "f9ce0b7d376e6309941ef37f3967ec9f1c5e0df4a602992d4f9d29cb1ad756a4",
+      "claim_type": "confidence_interval",
+      "reported": [
+        0.941,
+        1.308
+      ],
+      "gold_label": null,
+      "independent_reanalysis_reference": null,
+      "source_method_reference": null,
+      "rationale": null
+    },
+    {
+      "claim_id": "S5-C3",
+      "report_id": "S5",
+      "source_report_sha256": "f9ce0b7d376e6309941ef37f3967ec9f1c5e0df4a602992d4f9d29cb1ad756a4",
+      "claim_type": "p_value",
+      "reported": 0.215,
+      "gold_label": null,
+      "independent_reanalysis_reference": null,
+      "source_method_reference": null,
+      "rationale": null
+    },
+    {
+      "claim_id": "S6-C1",
+      "report_id": "S6",
+      "source_report_sha256": "b6d5cca76c74e8895139ecbce41d671bb517ee372e72a6b12f8ba36cd0d97cd6",
+      "claim_type": "coefficient",
+      "reported": 15.7,
+      "gold_label": null,
+      "independent_reanalysis_reference": null,
+      "source_method_reference": null,
+      "rationale": null
+    },
+    {
+      "claim_id": "S6-C2",
+      "report_id": "S6",
+      "source_report_sha256": "b6d5cca76c74e8895139ecbce41d671bb517ee372e72a6b12f8ba36cd0d97cd6",
+      "claim_type": "confidence_interval",
+      "reported": [
+        0.99,
+        1.351
+      ],
+      "gold_label": null,
+      "independent_reanalysis_reference": null,
+      "source_method_reference": null,
+      "rationale": null
+    },
+    {
+      "claim_id": "S6-C3",
+      "report_id": "S6",
+      "source_report_sha256": "b6d5cca76c74e8895139ecbce41d671bb517ee372e72a6b12f8ba36cd0d97cd6",
+      "claim_type": "p_value",
+      "reported": 0.066,
+      "gold_label": null,
+      "independent_reanalysis_reference": null,
+      "source_method_reference": null,
+      "rationale": null
+    },
+    {
+      "claim_id": "S7-C1",
+      "report_id": "S7",
+      "source_report_sha256": "250236e90462a3374f4acb80bdd588dff4d3c65924bb5aa3f797de5bc7700ce9",
+      "claim_type": "sample_size",
+      "reported": 106920,
+      "gold_label": null,
+      "independent_reanalysis_reference": null,
+      "source_method_reference": null,
+      "rationale": null
+    },
+    {
+      "claim_id": "S7-C2",
+      "report_id": "S7",
+      "source_report_sha256": "250236e90462a3374f4acb80bdd588dff4d3c65924bb5aa3f797de5bc7700ce9",
+      "claim_type": "distinct_count",
+      "reported": 4,
+      "gold_label": null,
+      "independent_reanalysis_reference": null,
+      "source_method_reference": null,
+      "rationale": null
+    },
+    {
+      "claim_id": "S7-C3",
+      "report_id": "S7",
+      "source_report_sha256": "250236e90462a3374f4acb80bdd588dff4d3c65924bb5aa3f797de5bc7700ce9",
+      "claim_type": "coefficient",
+      "reported": 0.002,
+      "gold_label": null,
+      "independent_reanalysis_reference": null,
+      "source_method_reference": null,
+      "rationale": null
+    },
+    {
+      "claim_id": "S8-C1",
+      "report_id": "S8",
+      "source_report_sha256": "6f5ce5c0e92331d1009a3f8b131c383c4169405ae0fd81cea93d1c3cf88301b7",
+      "claim_type": "sample_size",
+      "reported": 99645,
+      "gold_label": null,
+      "independent_reanalysis_reference": null,
+      "source_method_reference": null,
+      "rationale": null
+    },
+    {
+      "claim_id": "S8-C2",
+      "report_id": "S8",
+      "source_report_sha256": "6f5ce5c0e92331d1009a3f8b131c383c4169405ae0fd81cea93d1c3cf88301b7",
+      "claim_type": "coefficient",
+      "reported": 0.0811,
+      "gold_label": null,
+      "independent_reanalysis_reference": null,
+      "source_method_reference": null,
+      "rationale": null
+    },
+    {
+      "claim_id": "S8-C3",
+      "report_id": "S8",
+      "source_report_sha256": "6f5ce5c0e92331d1009a3f8b131c383c4169405ae0fd81cea93d1c3cf88301b7",
+      "claim_type": "confidence_interval",
+      "reported": [
+        -0.0002,
+        0.202
+      ],
+      "gold_label": null,
+      "independent_reanalysis_reference": null,
+      "source_method_reference": null,
+      "rationale": null
+    }
+  ]
+}
