@@ -1,3 +1,8 @@
-# Real-data experiment dependencies, not needed for the small core checker
+# Research-script dependencies; the small core checker uses Python standard library.
+# Refit results can vary slightly by library version; use historical snapshots
+# only as reference and rerun pinned external source data for new evidence.
+numpy>=1.24,<3
 pandas>=2.0,<3
+scipy>=1.11,<2
+patsy>=0.5.6,<2
 statsmodels>=0.14,<0.15

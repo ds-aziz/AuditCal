@@ -1,28 +1,44 @@
-name: AuditCal portfolio checks
+name: AuditCal software and reproducibility checks
 on:
   push:
     branches: [main]
+  pull_request:
+    branches: [main]
   workflow_dispatch:
+
 permissions:
   contents: read
+
 jobs:
   test:
+    name: Python ${{ matrix.python-version }}
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.11', '3.12']
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
-      - name: Install
+          python-version: ${{ matrix.python-version }}
+      - name: Install test and selected research dependencies
         run: |
           python -m pip install -e '.[test]'
           python -m pip install -r requirements-experiments.txt
-      - name: Run tests
+          python -m pip check
+      - name: Check research modules compile
+        run: python -m compileall -q src experiments evaluation tests
+      - name: Run software and structural tests
         run: python -m pytest -q
       - name: Ensure unreviewed pilot cannot claim accuracy
         shell: bash
         run: |
           python evaluation/heldout_v01_scoring_gate.py > /tmp/auditcal_gate.json
           grep -q '"status": "BLOCKED_PENDING_INDEPENDENT_GOLD_AND_PAIRED_PREDICTIONS"' /tmp/auditcal_gate.json
-      - name: Demonstration
+      - name: Run documented structured-claim example
         run: python -m auditcal.cli examples/claims.jsonl
+      - name: Verify included historical numerical snapshots
+        run: |
+          python -m experiments.audit_authentic_metr_claims
+          python -m experiments.stage10_audit_verified_count_claims

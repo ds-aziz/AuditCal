@@ -52,7 +52,7 @@ This is a proposed research programme, **not proof of novelty, professor accepta
 
 ## Run the software
 
-Python 3.10+:
+Python 3.11+ (verified in CI on Python 3.11 and 3.12):
 
 ```bash
 python -m pip install -e '.[test]'
