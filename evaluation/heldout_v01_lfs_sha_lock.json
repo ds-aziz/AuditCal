@@ -1,0 +1,138 @@
+{
+  "version": "heldout_v01_integrity_lock",
+  "source_repository": "amazon-science/agentic-forking-path",
+  "source_git_commit": "d489f03b143fcaa9befb8cc443594ff63ec61eaa",
+  "frozen_manifest": "evaluation/heldout_v01_manifest.json",
+  "status": "UPSTREAM_GIT_LFS_POINTERS_LOCKED_BEFORE_REPORT_CONTENTS_READ",
+  "note": "These SHA256 values are published LFS object IDs for 8 reports and 8 agent-written scripts; source content not downloaded or executed in this hash-lock stage.",
+  "files": [
+    {
+      "id": "S1",
+      "filename": "mirrored_report.txt",
+      "path": "experiment_data/workspaces/standard/bedrock_us.anthropic.claude-sonnet-4-5-20250929-v1_0/sample_metr/2025-11-12T19-03-00+0000/mirrored_report.txt",
+      "expected_sha256": "6f756bf5c67d4aed08afbed1f992d3ebec8c8aac32e7b5607ba5e7d21de95744",
+      "expected_bytes": 16521,
+      "pointer_git_blob_sha": "3a035457d456fd05b39d23304f717999e1b372a9"
+    },
+    {
+      "id": "S1",
+      "filename": "final_analysis.py",
+      "path": "experiment_data/workspaces/standard/bedrock_us.anthropic.claude-sonnet-4-5-20250929-v1_0/sample_metr/2025-11-12T19-03-00+0000/final_analysis.py",
+      "expected_sha256": "9df7c935202ca03b66d538879502ed74301297c4bc9c28c816066ba4d3d6517d",
+      "expected_bytes": 12478,
+      "pointer_git_blob_sha": "90865e2162ba4f5a22d2e31f054fc85360c01f69"
+    },
+    {
+      "id": "S2",
+      "filename": "mirrored_report.txt",
+      "path": "experiment_data/workspaces/standard/bedrock_us.anthropic.claude-sonnet-4-5-20250929-v1_0/sample_metr/2025-11-12T19-45-03+0000/mirrored_report.txt",
+      "expected_sha256": "f715c3d93a454676a3fc5a776ec9ad2a6ee3acf8bebcc50fabe3964dff325506",
+      "expected_bytes": 13243,
+      "pointer_git_blob_sha": "d4c00c99ec182179bcd7d9afcc49ac9648be7773"
+    },
+    {
+      "id": "S2",
+      "filename": "final_analysis.py",
+      "path": "experiment_data/workspaces/standard/bedrock_us.anthropic.claude-sonnet-4-5-20250929-v1_0/sample_metr/2025-11-12T19-45-03+0000/final_analysis.py",
+      "expected_sha256": "feb3c6e7fb1e3111e5a81277e4a909f647888003d6eba50f34f4e76523207b8c",
+      "expected_bytes": 11884,
+      "pointer_git_blob_sha": "1a1c6e7935c487a53341190f4ddbc546c0a57ab3"
+    },
+    {
+      "id": "S3",
+      "filename": "mirrored_report.txt",
+      "path": "experiment_data/workspaces/standard/bedrock_us.anthropic.claude-sonnet-4-5-20250929-v1_0/sample_soccer/2025-11-12T18-01-53+0000/mirrored_report.txt",
+      "expected_sha256": "87c029dc8ada5fb39faab0bfdb2938e3a93d2f90eeb8236ce3fed26c67437ee3",
+      "expected_bytes": 12908,
+      "pointer_git_blob_sha": "91e7d5b939fd8589a2ab5a6ef27319e2f64173a1"
+    },
+    {
+      "id": "S3",
+      "filename": "final_analysis.py",
+      "path": "experiment_data/workspaces/standard/bedrock_us.anthropic.claude-sonnet-4-5-20250929-v1_0/sample_soccer/2025-11-12T18-01-53+0000/final_analysis.py",
+      "expected_sha256": "7021eaee137ffa3319b53c5b33cf8f59a7ef8d783473e978f277b4f43a3f9ec8",
+      "expected_bytes": 13396,
+      "pointer_git_blob_sha": "b31053a0d2cfcdbad9e340d4a6a7b8f3a725536e"
+    },
+    {
+      "id": "S4",
+      "filename": "mirrored_report.txt",
+      "path": "experiment_data/workspaces/standard/bedrock_us.anthropic.claude-sonnet-4-5-20250929-v1_0/sample_soccer/2025-11-12T18-56-42+0000/mirrored_report.txt",
+      "expected_sha256": "d289552abbef9fa0fa591757b154f9fec8194bdba0929599fe4f9718a5c17208",
+      "expected_bytes": 14988,
+      "pointer_git_blob_sha": "eecc267d7b2d23156717f3217233f33183f9cbfd"
+    },
+    {
+      "id": "S4",
+      "filename": "final_analysis.py",
+      "path": "experiment_data/workspaces/standard/bedrock_us.anthropic.claude-sonnet-4-5-20250929-v1_0/sample_soccer/2025-11-12T18-56-42+0000/final_analysis.py",
+      "expected_sha256": "c741da52598d58b83baf46025c32833a41be0c4f98c893f198a4e50d72ee6041",
+      "expected_bytes": 8653,
+      "pointer_git_blob_sha": "0ee7f4c898bb3c539e20693948962d6494baa88f"
+    },
+    {
+      "id": "S5",
+      "filename": "mirrored_report.txt",
+      "path": "experiment_data/workspaces/standard/bedrock_qwen.qwen3-235b-a22b-2507-v1_0/sample_metr/2025-12-11T22-29-20+0000/mirrored_report.txt",
+      "expected_sha256": "f9ce0b7d376e6309941ef37f3967ec9f1c5e0df4a602992d4f9d29cb1ad756a4",
+      "expected_bytes": 4110,
+      "pointer_git_blob_sha": "ddce0f418f00adcf844e2ace2c09df73b23870c2"
+    },
+    {
+      "id": "S5",
+      "filename": "final_analysis.py",
+      "path": "experiment_data/workspaces/standard/bedrock_qwen.qwen3-235b-a22b-2507-v1_0/sample_metr/2025-12-11T22-29-20+0000/final_analysis.py",
+      "expected_sha256": "aa6dbc37013f810200c6978757cc1f1b98f0269b9b53038c6da2ece857278364",
+      "expected_bytes": 3104,
+      "pointer_git_blob_sha": "ad5abf47a0d3dd2783a36e9475ae04b1dc692efb"
+    },
+    {
+      "id": "S6",
+      "filename": "mirrored_report.txt",
+      "path": "experiment_data/workspaces/standard/bedrock_qwen.qwen3-235b-a22b-2507-v1_0/sample_metr/2025-12-11T22-35-55+0000/mirrored_report.txt",
+      "expected_sha256": "b6d5cca76c74e8895139ecbce41d671bb517ee372e72a6b12f8ba36cd0d97cd6",
+      "expected_bytes": 6031,
+      "pointer_git_blob_sha": "85b713a1c219ce749f8133776aabdb36aa5d12e3"
+    },
+    {
+      "id": "S6",
+      "filename": "final_analysis.py",
+      "path": "experiment_data/workspaces/standard/bedrock_qwen.qwen3-235b-a22b-2507-v1_0/sample_metr/2025-12-11T22-35-55+0000/final_analysis.py",
+      "expected_sha256": "622b48db9752ffe29745345237f1e209644568846f6f666a4e5881136f4e5634",
+      "expected_bytes": 3558,
+      "pointer_git_blob_sha": "72544f4f2fc98eff5681fa1db0ab492b70eb053b"
+    },
+    {
+      "id": "S7",
+      "filename": "mirrored_report.txt",
+      "path": "experiment_data/workspaces/standard/bedrock_qwen.qwen3-235b-a22b-2507-v1_0/sample_soccer/2025-12-11T19-39-27+0000/mirrored_report.txt",
+      "expected_sha256": "250236e90462a3374f4acb80bdd588dff4d3c65924bb5aa3f797de5bc7700ce9",
+      "expected_bytes": 5093,
+      "pointer_git_blob_sha": "081a639a659895b884745a5a0479891d948efb91"
+    },
+    {
+      "id": "S7",
+      "filename": "final_analysis.py",
+      "path": "experiment_data/workspaces/standard/bedrock_qwen.qwen3-235b-a22b-2507-v1_0/sample_soccer/2025-12-11T19-39-27+0000/final_analysis.py",
+      "expected_sha256": "0d2d834075fd5490cfebabdc0b03ec61f914384f40c5f2646328bc6d2c024be3",
+      "expected_bytes": 3081,
+      "pointer_git_blob_sha": "470ae51b79e52d0be68baef1c4a0a206603f0ae2"
+    },
+    {
+      "id": "S8",
+      "filename": "mirrored_report.txt",
+      "path": "experiment_data/workspaces/standard/bedrock_qwen.qwen3-235b-a22b-2507-v1_0/sample_soccer/2025-12-11T22-21-05+0000/mirrored_report.txt",
+      "expected_sha256": "6f5ce5c0e92331d1009a3f8b131c383c4169405ae0fd81cea93d1c3cf88301b7",
+      "expected_bytes": 5045,
+      "pointer_git_blob_sha": "db73fb34f896b390b3bf9f1afd3cc364743d863c"
+    },
+    {
+      "id": "S8",
+      "filename": "final_analysis.py",
+      "path": "experiment_data/workspaces/standard/bedrock_qwen.qwen3-235b-a22b-2507-v1_0/sample_soccer/2025-12-11T22-21-05+0000/final_analysis.py",
+      "expected_sha256": "e411b2d2e7277a8b178d236ec68a41d24083bddc0689fd68331063bb707a6ae4",
+      "expected_bytes": 2634,
+      "pointer_git_blob_sha": "303a0940a8bf0d4bc3ac5d10efaadcaead7a111b"
+    }
+  ]
+}

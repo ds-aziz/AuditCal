@@ -1,0 +1,296 @@
+{
+  "stage": "STAGE10_SECOND_DATASET_SOURCE_TRIAGE",
+  "new_domain": "soccer_red_cards",
+  "original_real_ai_reports_hash_verified": 2,
+  "datasets_downloaded": 1,
+  "independent_model_recomputations": 0,
+  "scientifically_confirmed_AI_errors": 0,
+  "provenance_notes": "Original reports and code verified against public upstream LFS. Agent code not executed.",
+  "dataset": {
+    "source_url": "https://raw.githubusercontent.com/psu-psychology/psych-490-reproducibility-2024-fall/main/src/surveys/csv/CrowdstormingDataJuly1st.csv",
+    "published_paper": "https://doi.org/10.1177/2515245917747646",
+    "bytes": 33305306,
+    "sha256": "6dbc24e6f62862b0fc083ef5dc70487cf51739032bd0a04b4fed8aab3a81889a",
+    "row_count": 146028,
+    "column_count": 28,
+    "columns": [
+      "playerShort",
+      "player",
+      "club",
+      "leagueCountry",
+      "birthday",
+      "height",
+      "weight",
+      "position",
+      "games",
+      "victories",
+      "ties",
+      "defeats",
+      "goals",
+      "yellowCards",
+      "yellowReds",
+      "redCards",
+      "photoID",
+      "rater1",
+      "rater2",
+      "refNum",
+      "refCountry",
+      "Alpha_3",
+      "meanIAT",
+      "nIAT",
+      "seIAT",
+      "meanExp",
+      "nExp",
+      "seExp"
+    ],
+    "note": "Public course copy; equivalence to upstream OSF original must still be independently verified"
+  },
+  "reports": [
+    {
+      "source": "https://github.com/amazon-science/agentic-forking-path/tree/main/experiment_data/workspaces/standard/bedrock_us.anthropic.claude-sonnet-4-5-20250929-v1_0/sample_soccer/2025-11-12T17-10-55%2B0000",
+      "timestamp": "2025-11-12T17-10-55+0000",
+      "persona": "standard",
+      "model": "bedrock_us.anthropic.claude-sonnet-4-5-20250929-v1_0",
+      "report": {
+        "sha256": "c1a3f19d89c2d89c44609b49a24eac5f13727888586b1eee3876d2d268eb701e",
+        "bytes": 11335,
+        "hash_checked": true
+      },
+      "agent_code": {
+        "sha256": "45b8cd3a3713369264cda6afef032cb220485e6b08bcf4f55608e28ce5c3f01c",
+        "bytes": 14131,
+        "hash_checked": true
+      },
+      "report_excerpts_for_manual_review": [
+        {
+          "line": 2,
+          "text": "## Soccer Referees and Red Cards by Player Skin Tone"
+        },
+        {
+          "line": 8,
+          "text": "This analysis examined whether soccer referees are more likely to give red cards to dark-skinned players compared to light-skinned players, using data from 146,028 player-referee d"
+        },
+        {
+          "line": 10,
+          "text": "**Primary Finding:** The hypothesis is **SUPPORTED**. After adjusting for key confounders, dark-skinned players (skin tone ≥0.50 on a 0-1 scale) have a statistically significant 0."
+        },
+        {
+          "line": 14,
+          "text": "- **Adjusted Odds Ratio:** 1.16 (95% CI: 1.00, 1.35; p=0.057 with cluster-robust SEs)"
+        },
+        {
+          "line": 16,
+          "text": "- Results robust to alternative skin tone definitions and most sensitivity analyses"
+        },
+        {
+          "line": 20,
+          "text": "## 1. PRIMARY ESTIMAND: ADJUSTED RISK DIFFERENCE"
+        },
+        {
+          "line": 23,
+          "text": "**95% Confidence Interval:** (0.0269, 0.3553) percentage points"
+        },
+        {
+          "line": 24,
+          "text": "**P-value (two-sided):** 0.0200"
+        },
+        {
+          "line": 25,
+          "text": "**Method:** G-computation (marginal standardization) from logistic regression; bootstrap confidence intervals with 1,000 replications"
+        },
+        {
+          "line": 27,
+          "text": "**Interpretation:** Dark-skinned players have an estimated 0.18 percentage point higher absolute risk of receiving at least one red card in a player-referee dyad, compared to light"
+        },
+        {
+          "line": 31,
+          "text": "## 2. SECONDARY ESTIMAND: ADJUSTED ODDS RATIO"
+        },
+        {
+          "line": 34,
+          "text": "**95% Confidence Interval (cluster-robust):** (0.9956, 1.3454)"
+        },
+        {
+          "line": 35,
+          "text": "**P-value (two-sided, cluster-robust):** 0.0570"
+        },
+        {
+          "line": 36,
+          "text": "**Method:** Logistic regression with cluster-robust standard errors (clustered by player)"
+        },
+        {
+          "line": 38,
+          "text": "**Interpretation:** Dark-skinned players have 15.7% higher odds of receiving a red card compared to light-skinned players, after adjustment. The cluster-robust 95% confidence inter"
+        },
+        {
+          "line": 42,
+          "text": "## 3. MODEL SPECIFICATIONS & METHODS"
+        },
+        {
+          "line": 52,
+          "text": "- Light skin (< 0.50): 89,502 dyads (77%)"
+        },
+        {
+          "line": 53,
+          "text": "- Dark skin (≥ 0.50): 26,658 dyads (23%)"
+        },
+        {
+          "line": 54,
+          "text": "- Total red card events: 1,457 dyads with ≥1 red card"
+        },
+        {
+          "line": 57,
+          "text": "**Binary indicator:** Any red card received (1) vs. no red cards (0) in the player-referee dyad"
+        },
+        {
+          "line": 58,
+          "text": "- Overall rate: 1.25% of dyads had at least one red card"
+        },
+        {
+          "line": 59,
+          "text": "- Light skin rate: 1.23%"
+        },
+        {
+          "line": 60,
+          "text": "- Dark skin rate: 1.35%"
+        },
+        {
+          "line": 64,
+          "text": "**Skin tone** was rated independently by two blinded raters based on player profile photos, using a 5-point scale (0.00 = very light to 1.00 = very dark)."
+        },
+        {
+          "line": 66,
+          "text": "- Mean skin tone: average of two raters"
+        }
+      ],
+      "agent_code_was_executed": false,
+      "numeric_claims_verified": 0
+    },
+    {
+      "source": "https://github.com/amazon-science/agentic-forking-path/tree/main/experiment_data/workspaces/standard/bedrock_us.anthropic.claude-sonnet-4-5-20250929-v1_0/sample_soccer/2025-11-12T17-30-15%2B0000",
+      "timestamp": "2025-11-12T17-30-15+0000",
+      "persona": "standard",
+      "model": "bedrock_us.anthropic.claude-sonnet-4-5-20250929-v1_0",
+      "report": {
+        "sha256": "71ebb9fe572384a4db90e0c38705783f7f7aafe42a6dd8da249f4281ac3354fe",
+        "bytes": 12813,
+        "hash_checked": true
+      },
+      "agent_code": {
+        "sha256": "f20b9373e2e3b05760ceb6401f7ff356898907874b65b1664fa4326dbcd9bf9f",
+        "bytes": 2914,
+        "hash_checked": true
+      },
+      "report_excerpts_for_manual_review": [
+        {
+          "line": 1,
+          "text": "# Statistical Analysis Report: Red Card Discrimination by Skin Tone in European Soccer"
+        },
+        {
+          "line": 5,
+          "text": "This analysis examined whether soccer referees are more likely to give red cards to dark-skin-toned players compared to light-skin-toned players using a dataset of 146,028 player-r"
+        },
+        {
+          "line": 8,
+          "text": "- **Primary Estimand (Adjusted Risk Difference):** 0.27 percentage points (95% CI: 0.05 to 0.48; p = 0.016)"
+        },
+        {
+          "line": 9,
+          "text": "- **Secondary Estimand (Adjusted Odds Ratio):** 1.25 (95% CI: 1.04 to 1.49; p = 0.016)"
+        },
+        {
+          "line": 10,
+          "text": "- **Conclusion: SUPPORTED** — Dark-skinned players have a statistically significantly higher probability of receiving red cards compared to light-skinned players, even after adjust"
+        },
+        {
+          "line": 12,
+          "text": "The effect size is modest but meaningful: dark-skinned players face approximately a 0.27 percentage point increase in red card probability compared to light-skinned players. Given "
+        },
+        {
+          "line": 16,
+          "text": "## 1. Primary Estimand: Adjusted Risk Difference"
+        },
+        {
+          "line": 19,
+          "text": "**95% Confidence Interval:** (0.0005, 0.0048) or (0.05, 0.48) percentage points"
+        },
+        {
+          "line": 20,
+          "text": "**P-value (two-sided):** 0.0158"
+        },
+        {
+          "line": 21,
+          "text": "**Significance level:** α = 0.05"
+        },
+        {
+          "line": 23,
+          "text": "**Interpretation:** After adjusting for the number of games played in each player-referee dyad, player position, and league, dark-skinned players have a 0.27 percentage point highe"
+        },
+        {
+          "line": 27,
+          "text": "## 2. Secondary Estimand: Adjusted Odds Ratio"
+        },
+        {
+          "line": 30,
+          "text": "**95% Confidence Interval:** (1.042, 1.490)"
+        },
+        {
+          "line": 31,
+          "text": "**P-value (two-sided):** 0.0158"
+        },
+        {
+          "line": 33,
+          "text": "**Interpretation:** The odds of receiving a red card are 24.6% higher for dark-skinned players compared to light-skinned players, after adjustment for covariates. The confidence in"
+        },
+        {
+          "line": 37,
+          "text": "## 3. Model and Estimation Details"
+        },
+        {
+          "line": 43,
+          "text": "- Light skin dyads (skin tone 0.00-0.25): 90,116 (83.7%)"
+        },
+        {
+          "line": 44,
+          "text": "- Dark skin dyads (skin tone 0.75-1.00): 17,490 (16.3%)"
+        },
+        {
+          "line": 46,
+          "text": "- Missing skin tone ratings: 21,407 (players without photos)"
+        },
+        {
+          "line": 47,
+          "text": "- Middle skin tones (0.375-0.625): 17,015 (to ensure clear contrast between exposure groups)"
+        },
+        {
+          "line": 53,
+          "text": "**Skin tone measurement:**"
+        },
+        {
+          "line": 54,
+          "text": "- Two independent raters coded player skin tone from profile photos on a 5-point scale: 0.00 (very light), 0.25 (light), 0.50 (neither), 0.75 (dark), 1.00 (very dark)"
+        },
+        {
+          "line": 58,
+          "text": "- **Light skin:** Average skin tone ≤ 0.25 (very light to light)"
+        },
+        {
+          "line": 59,
+          "text": "- **Dark skin:** Average skin tone ≥ 0.75 (dark to very dark)"
+        },
+        {
+          "line": 64,
+          "text": "- **Binary indicator:** Any red card received in the player-referee dyad (1 if redCards > 0, otherwise 0)"
+        }
+      ],
+      "agent_code_was_executed": false,
+      "numeric_claims_verified": 0
+    }
+  ],
+  "execution": {
+    "run_url": "https://github.com/ds-aziz/CSC2027-AuditCal/actions/runs/40752161744",
+    "github_job_id": 123041436289,
+    "status": "success",
+    "purpose": "Source-integrity and dataset-acquisition only"
+  }
+}

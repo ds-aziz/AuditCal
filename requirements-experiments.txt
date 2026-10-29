@@ -1,0 +1,3 @@
+# Real-data experiment dependencies, not needed for the small core checker
+pandas>=2.0,<3
+statsmodels>=0.14,<0.15

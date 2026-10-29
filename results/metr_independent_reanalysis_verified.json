@@ -1,0 +1,116 @@
+{
+  "source_dataset": "https://github.com/METR/Measuring-Early-2025-AI-on-Exp-OSS-Devs/blob/7ff2d7670235f531dff77eff58355bd77392f396/data_complete.csv",
+  "source_agent_report": "https://github.com/amazon-science/agentic-forking-path/tree/main/experiment_data/workspaces/standard/bedrock_us.anthropic.claude-sonnet-4-5-20250929-v1_0/sample_metr/2025-11-12T17-17-32%2B0000",
+  "dataset_sha256_downloaded_bytes": "1493fc46dc379b15d2c39273fa7a7ee98767ff0d90dea113f300d7338f165746",
+  "dataset_is_primary_release": true,
+  "original_agent_script_was_executed": false,
+  "dataset_rows": 246,
+  "software_versions": {
+    "statsmodels": "0.14.6",
+    "pandas": "3.1.0"
+  },
+  "comparison_tolerances": {
+    "gmr_absolute": 0.02,
+    "p_value_absolute": 0.01,
+    "ci_endpoint_percentage_points": 3
+  },
+  "primary": {
+    "reported": {
+      "n": 246,
+      "developers": 16,
+      "gmr": 1.157,
+      "p_value": 0.0658,
+      "pct_ci": [
+        -0.95,
+        35.15
+      ]
+    },
+    "recomputed": {
+      "method": "REML random-intercept mixed-effects regression; Wald normal test",
+      "n": 246,
+      "developers": 16,
+      "beta_log": 0.1458387024953222,
+      "se_log": 0.07928042755986056,
+      "p_value": 0.06583731110737423,
+      "ci_log": [
+        -0.009548080200941222,
+        0.3012254851915856
+      ],
+      "gmr": 1.1570095502457518,
+      "pct_time_change": 15.70095502457518,
+      "pct_ci": [
+        -0.9502642013990759,
+        35.151405358800105
+      ],
+      "converged": true
+    },
+    "audit": {
+      "status": "CONSISTENT_WITH_REPORTED_ANALYSIS",
+      "sample_size_matches": true,
+      "numerical_agreement_within_declared_tolerances": true,
+      "fit_converged": true,
+      "differences_actual_minus_reported": {
+        "gmr": 0.000009550245751777098,
+        "p_value": 0.00003731110737423271,
+        "pct_ci": [
+          -0.0002642013990759029,
+          0.0014053588001061712
+        ]
+      },
+      "agreement_is_not_proof_of_scientific_validity": true
+    }
+  },
+  "secondary": {
+    "reported": {
+      "n": 230,
+      "developers": 16,
+      "gmr": 1.201,
+      "p_value": 0.0382,
+      "pct_ci": [
+        1.15,
+        42.64
+      ]
+    },
+    "recomputed": {
+      "method": "OLS with developer-clustered standard errors, t_15 inference",
+      "n": 230,
+      "developers": 16,
+      "beta_log": 0.18328020922656788,
+      "se_log": 0.08062947545613679,
+      "p_value": 0.038153037189752256,
+      "ci_log": [
+        0.01142255040686202,
+        0.35513786804627373
+      ],
+      "gmr": 1.2011509345040732,
+      "pct_time_change": 20.11509345040732,
+      "pct_ci": [
+        1.1488036838928295,
+        42.637729257667665
+      ]
+    },
+    "audit": {
+      "status": "CONSISTENT_WITH_REPORTED_ANALYSIS",
+      "sample_size_matches": true,
+      "numerical_agreement_within_declared_tolerances": true,
+      "fit_converged": true,
+      "differences_actual_minus_reported": {
+        "gmr": 0.00015093450407310804,
+        "p_value": -0.000046962810247741515,
+        "pct_ci": [
+          -0.0011963161071704143,
+          -0.0022707423323353737
+        ]
+      },
+      "agreement_is_not_proof_of_scientific_validity": true
+    }
+  },
+  "independent_statistical_conclusions_count": 2,
+  "notes": "Numerical reproduction only for two reported estimands. This does not prove the statistical design, random-effects assumptions, handling of missing data, or causal statements are valid. A different defensible specification may produce other results.",
+  "evidence_provenance": {
+    "github_actions_workflow_url": "https://github.com/ds-aziz/CSC2027-AuditCal/actions/runs/40744536806",
+    "github_actions_job_id": 123014696023,
+    "github_actions_outcome": "success",
+    "result_source": "Unmodified JSON object parsed from successful GitHub Actions job logs"
+  }
+}

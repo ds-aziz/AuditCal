@@ -1,0 +1,3 @@
+{"claim_id":"DEMO1","claim_type":"p_value","reported":0.01,"verified":0.12,"model_id":"ols_a","evidence_model_id":"ols_a","provenance":{"source":"manual_demo_not_agent_trace"}}
+{"claim_id":"DEMO2","claim_type":"coefficient","reported":1.5,"verified":1.5,"model_id":"ols_a","evidence_model_id":"ols_a","provenance":{"source":"manual_demo_not_agent_trace"}}
+{"claim_id":"DEMO3","claim_type":"p_value","reported":0.01,"verified":0.12,"model_id":"ols_a","evidence_model_id":"ols_b","provenance":{"source":"manual_demo_not_agent_trace"}}

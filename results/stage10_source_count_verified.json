@@ -1,0 +1,32 @@
+{
+  "reported_unique_players": 9959,
+  "reported_final_dyads": 99535,
+  "independent_reimplementation_of_reported_selection": {
+    "retained_dyads": 99535,
+    "retained_unique_players": 1214,
+    "retained_unique_referees": 2758,
+    "selection": "Nonmissing two ratings; mean rating <= 0.25 or >= 0.75; complete cases for ten listed model columns"
+  },
+  "reported_dyads_differ_from_reimplemented_selection": false,
+  "all_source_unique_player_ids": 2053,
+  "all_source_unique_referee_ids": 3147,
+  "all_source_rows": 146028,
+  "interpretation": "INCONSISTENT_WITH_UNMODIFIED_SOURCE_DATA_COPY",
+  "report_statement_location": "mirrored_report.txt line 34",
+  "recorded_report_excerpt": "del/Estimation Details  - **Unit of analysis**: Player-referee dyad - **Sample size (N)**: 99,535 dyads (from 9,959 unique players and 2,103 unique referees) - **Exposure variable**: Skin tone binary ",
+  "source_data_sha256": "6dbc24e6f62862b0fc083ef5dc70487cf51739032bd0a04b4fed8aab3a81889a",
+  "original_data_mirror_sha256_verified": true,
+  "source_report_sha256": "87fcf04ba62bf81eb93fcf17d6596e623df82be9cdb3dccb33180c1c3dba2b45",
+  "source_script_sha256": "47b82061dbc70f634a5a2f669d243bf3bd5d8fb1aa8ca4382c61de7826d109ca",
+  "source_model": "Qwen3 235B",
+  "report_run": "2025-12-11T19-37-43+0000",
+  "independent_calc_workflow": "https://github.com/ds-aziz/CSC2027-AuditCal/actions/runs/40751456243",
+  "independent_calc_job_id": 123038944369,
+  "independent_calc_conclusion": "success",
+  "source_byte_identical_to_original_OSF_not_proven": true,
+  "source_error_count_verified_against_mirrored_copy": 2,
+  "source_sample_size_count_matches": true,
+  "analysis_code_from_AI_was_not_executed": true,
+  "claims_manually_matched_to_report": true,
+  "scientific_causal_errors_established": 0
+}
